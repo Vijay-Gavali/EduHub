@@ -1,0 +1,39 @@
+@charset "UTF-8";
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.dashboard-menu {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.dashboard-menu ul li {
+    margin: 15px 0;
+}
+
+.dashboard-menu ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 18px;
+}
+
+.dashboard-menu ul li a:hover {
+    text-decoration: underline;
+}

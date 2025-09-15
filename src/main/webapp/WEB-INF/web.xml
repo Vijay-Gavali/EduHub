@@ -13,4 +13,14 @@
 		<servlet-name>UserRegistration</servlet-name>
 		<url-pattern>/UserRegistration</url-pattern>
 	</servlet-mapping>
+
+	<servlet>
+        <servlet-name>AdminUserController</servlet-name>
+        <servlet-class>com.controller.AdminUserController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AdminUserController</servlet-name>
+        <url-pattern>/AdminUserController</url-pattern>
+    </servlet-mapping>
 </web-app>
