@@ -1,6 +1,7 @@
 package com.model;
 
 public class Users {
+	
 	private int userId;
 	private String name;
 	private String email;

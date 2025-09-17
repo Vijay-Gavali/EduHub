@@ -8,8 +8,8 @@
 </head>
 <body>
 
-	<h2>User Registration</h2>
-	<form action="UserRegistration" method="post">
+	<h2>Registration</h2>
+	<form action="AdminTeacherRegistration" method="post">
 		<label>Name:</label>
 		<input type="text" name="name" required /><br />
 		
