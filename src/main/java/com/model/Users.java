@@ -1,77 +1,141 @@
 package com.model;
 
 public class Users {
-	
-	private int userId;
-	private String name;
-	private String email;
-	private String contactNo;
-	private String role;
-	private int age;
-	private String grade;
-	private int classId;
+    private int user_id;
+    private String admission_no;
+    private String admission_date;
+    private String name;
+    private String father_name;
+    private String mother_name;
+    private String dob;
+    private String aadhar_no;
+    private String parent_aadhar;
+    private String phone;
+    private String address;
+    private String email;
+    private String password;
+    private String role;
+    private String grade;
+    private String class_id;
+    private String contact_no; 
 
-	public int getUserId() {
-		return userId;
-	}
+    // Getters and Setters
+    public int getUser_id() {
+        return user_id;
+    }
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
+    }
 
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
+    public String getAdmission_no() {
+        return admission_no;
+    }
+    public void setAdmission_no(String admission_no) {
+        this.admission_no = admission_no;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getAdmission_date() {
+        return admission_date;
+    }
+    public void setAdmission_date(String admission_date) {
+        this.admission_date = admission_date;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getFather_name() {
+        return father_name;
+    }
+    public void setFather_name(String father_name) {
+        this.father_name = father_name;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getMother_name() {
+        return mother_name;
+    }
+    public void setMother_name(String mother_name) {
+        this.mother_name = mother_name;
+    }
 
-	public String getContactNo() {
-		return contactNo;
-	}
+    public String getDob() {
+        return dob;
+    }
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
 
-	public void setContactNo(String contactNo) {
-		this.contactNo = contactNo;
-	}
+    public String getAadhar_no() {
+        return aadhar_no;
+    }
+    public void setAadhar_no(String aadhar_no) {
+        this.aadhar_no = aadhar_no;
+    }
 
-	public String getRole() {
-		return role;
-	}
+    public String getParent_aadhar() {
+        return parent_aadhar;
+    }
+    public void setParent_aadhar(String parent_aadhar) {
+        this.parent_aadhar = parent_aadhar;
+    }
 
-	public void setRole(String role) {
-		this.role = role;
-	}
+    public String getPhone() {
+        return phone;
+    }
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
-	public int getAge() {
-		return age;
-	}
+    public String getAddress() {
+        return address;
+    }
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	public void setAge(int age) {
-		this.age = age;
-	}
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public String getGrade() {
-		return grade;
-	}
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public void setGrade(String grade) {
-		this.grade = grade;
-	}
+    public String getRole() {
+        return role;
+    }
+    public void setRole(String role) {
+        this.role = role;
+    }
 
-	public int getClassId() {
-		return classId;
-	}
+    public String getGrade() {
+        return grade;
+    }
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
 
-	public void setClassId(int classId) {
-		this.classId = classId;
-	}
+    public String getClass_id() {
+        return class_id;
+    }
+    public void setClass_id(String class_id) {
+        this.class_id = class_id;
+    }
+
+    public String getContact_no() {
+        return contact_no;
+    }
+    public void setContact_no(String contact_no) {
+        this.contact_no = contact_no;
+    }
 }
