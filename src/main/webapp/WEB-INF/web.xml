@@ -43,4 +43,37 @@
 		<servlet-name>AdminDeleteUserController</servlet-name>
 		<url-pattern>/AdminDeleteUserController</url-pattern>
 	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AdminViewClassesController</servlet-name>
+		<servlet-class>com.controller.AdminViewClassesController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AdminViewClassesController</servlet-name>
+		<url-pattern>/AdminViewClassesController</url-pattern>
+	</servlet-mapping>
+	
+	<!--AdminUpdateClassController -->
+	<servlet>
+		<servlet-name>AdminUpdateClassController</servlet-name>
+		<servlet-class>com.controller.AdminUpdateClassController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AdminUpdateClassController</servlet-name>
+		<url-pattern>/AdminUpdateClassController</url-pattern>
+	</servlet-mapping>
+	
+	<!-- AdminDeleteClassController -->
+	<servlet>
+		<servlet-name>AdminDeleteClassController</servlet-name>
+		<servlet-class>com.controller.AdminDeleteClassController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AdminDeleteClassController</servlet-name>
+		<url-pattern>/AdminDeleteClassController</url-pattern>
+	</servlet-mapping>
+
 </web-app>

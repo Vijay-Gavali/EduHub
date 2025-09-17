@@ -12,12 +12,12 @@
 
 	<div class="dashboard-menu">
 		<ul>
-			<li><a href="userRegistration.jsp">Add New User (Teacher)</a></li>
+			<li><a href="AdminTeacherRegistration.jsp">Add New User (Teacher)</a></li>
 			<li><a href="AdminUserController">View All Users</a></li>
-			<li><a href="ManageClasses.jsp">Manage Classes</a></li>
-			<li><a href="ViewAttendance.jsp">View Attendance</a></li>
-			<li><a href="ManageFees.jsp">Manage Fees</a></li>
-			<li><a href="ViewEnquiries.jsp">View Enquiries</a></li>
+			<li><a href="AdminViewClassesController">View Classes</a></li>
+			<li><a href="#">View Attendance</a></li>
+			<li><a href="#">Manage Fees</a></li>
+			<li><a href="#">View Enquiries</a></li>
 		</ul>
 	</div>
 </body>

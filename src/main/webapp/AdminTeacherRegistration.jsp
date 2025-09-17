@@ -25,8 +25,6 @@
 			<label>Role:</label> 
 			<select name="role" required>
 			<option value="Teacher">Teacher</option>
-			<option value="Parent">Parent</option>
-			<option value="Student">Student</option>
 		</select><br /> 
 		
 		<label>Age (only for Student):</label> 
@@ -48,7 +46,6 @@
 			<option value="9th_standard">9th standard</option>
 			<option value="10th_standard">10th standard</option>
 		</select><br />  
-		
 		<input type="submit" value="Add User" />
 	</form>
 </body>

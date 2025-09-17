@@ -31,7 +31,7 @@
 		List<Map<String, Object>> userList = (List<Map<String, Object>>) request.getAttribute("userList");
 
 		if (userList != null && !userList.isEmpty()) {
-			
+
 			for (Map<String, Object> user : userList) {
 				int userId = (Integer) user.get("user_id");
 		%>
@@ -45,7 +45,8 @@
 			<td><%=user.get("grade")%></td>
 			<td><%=user.get("class_id")%></td>
 			<td><a href="AdminUpdateUserController?userId=<%=userId%>">Update</a></td>
-			<td><a href="AdminDeleteUserController?userId=<%=user.get("user_id")%>"
+			<td><a
+				href="AdminDeleteUserController?userId=<%=user.get("user_id")%>"
 				onclick="return confirm('Are you sure ?');">Delete</a></td>
 
 		</tr>
