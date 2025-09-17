@@ -6,7 +6,6 @@
 
     <display-name>EduHub</display-name>
 
-    <!-- Admin/Teacher Registration -->
     <servlet>
         <servlet-name>AdminTeacherRegistration</servlet-name>
         <servlet-class>com.controller.AdminTeacherRegistration</servlet-class>
@@ -16,7 +15,6 @@
         <url-pattern>/AdminTeacherRegistration</url-pattern>
     </servlet-mapping>
 
-    <!-- Admin User Controller -->
     <servlet>
         <servlet-name>AdminUserController</servlet-name>
         <servlet-class>com.controller.AdminUserController</servlet-class>
@@ -26,7 +24,6 @@
         <url-pattern>/AdminUserController</url-pattern>
     </servlet-mapping>
 
-    <!-- Admin Update User Controller -->
     <servlet>
         <servlet-name>AdminUpdateUserController</servlet-name>
         <servlet-class>com.controller.AdminUpdateUserController</servlet-class>
@@ -36,7 +33,6 @@
         <url-pattern>/AdminUpdateUserController</url-pattern>
     </servlet-mapping>
 
-    <!-- Admin Delete User Controller -->
     <servlet>
         <servlet-name>AdminDeleteUserController</servlet-name>
         <servlet-class>com.controller.AdminDeleteUserController</servlet-class>
@@ -46,7 +42,6 @@
         <url-pattern>/AdminDeleteUserController</url-pattern>
     </servlet-mapping>
 
-    <!-- User Registration Servlet -->
     <servlet>
         <servlet-name>UserRegistration</servlet-name>
         <servlet-class>com.controller.UserRegistration</servlet-class>
@@ -56,7 +51,6 @@
         <url-pattern>/UserRegistration</url-pattern>
     </servlet-mapping>
 
-    <!-- Login Controller -->
     <servlet>
         <servlet-name>LoginController</servlet-name>
         <servlet-class>com.controller.LoginController</servlet-class>
