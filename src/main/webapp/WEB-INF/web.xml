@@ -1,46 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="https://jakarta.ee/xml/ns/jakartaee"
-	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
-	id="WebApp_ID" version="6.0">
-	<display-name>EduHub</display-name>
-	<servlet>
-		<servlet-name>AdminTeacherRegistration</servlet-name>
-		<servlet-class>com.controller.AdminTeacherRegistration</servlet-class>
-	</servlet>
+    xmlns="https://jakarta.ee/xml/ns/jakartaee"
+    xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+    id="WebApp_ID" version="6.0">
 
-	<servlet-mapping>
-		<servlet-name>AdminTeacherRegistration</servlet-name>
-		<url-pattern>/AdminTeacherRegistration</url-pattern>
-	</servlet-mapping>
+    <display-name>EduHub</display-name>
 
-	<servlet>
-		<servlet-name>AdminUserController</servlet-name>
-		<servlet-class>com.controller.AdminUserController</servlet-class>
-	</servlet>
+    <!-- Admin/Teacher Registration -->
+    <servlet>
+        <servlet-name>AdminTeacherRegistration</servlet-name>
+        <servlet-class>com.controller.AdminTeacherRegistration</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminTeacherRegistration</servlet-name>
+        <url-pattern>/AdminTeacherRegistration</url-pattern>
+    </servlet-mapping>
 
-	<servlet-mapping>
-		<servlet-name>AdminUserController</servlet-name>
-		<url-pattern>/AdminUserController</url-pattern>
-	</servlet-mapping>
+    <!-- Admin User Controller -->
+    <servlet>
+        <servlet-name>AdminUserController</servlet-name>
+        <servlet-class>com.controller.AdminUserController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminUserController</servlet-name>
+        <url-pattern>/AdminUserController</url-pattern>
+    </servlet-mapping>
 
-	<servlet>
-		<servlet-name>AdminUpdateUserController</servlet-name>
-		<servlet-class>com.controller.AdminUpdateUserController</servlet-class>
-	</servlet>
+    <!-- Admin Update User Controller -->
+    <servlet>
+        <servlet-name>AdminUpdateUserController</servlet-name>
+        <servlet-class>com.controller.AdminUpdateUserController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminUpdateUserController</servlet-name>
+        <url-pattern>/AdminUpdateUserController</url-pattern>
+    </servlet-mapping>
 
-	<servlet-mapping>
-		<servlet-name>AdminUpdateUserController</servlet-name>
-		<url-pattern>/AdminUpdateUserController</url-pattern>
-	</servlet-mapping>
+    <!-- Admin Delete User Controller -->
+    <servlet>
+        <servlet-name>AdminDeleteUserController</servlet-name>
+        <servlet-class>com.controller.AdminDeleteUserController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminDeleteUserController</servlet-name>
+        <url-pattern>/AdminDeleteUserController</url-pattern>
+    </servlet-mapping>
 
-	<servlet>
-		<servlet-name>AdminDeleteUserController</servlet-name>
-		<servlet-class>com.controller.AdminDeleteUserController</servlet-class>
-	</servlet>
+    <!-- User Registration Servlet -->
+    <servlet>
+        <servlet-name>UserRegistration</servlet-name>
+        <servlet-class>com.controller.UserRegistration</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserRegistration</servlet-name>
+        <url-pattern>/UserRegistration</url-pattern>
+    </servlet-mapping>
 
-	<servlet-mapping>
-		<servlet-name>AdminDeleteUserController</servlet-name>
-		<url-pattern>/AdminDeleteUserController</url-pattern>
-	</servlet-mapping>
+    <!-- Login Controller -->
+    <servlet>
+        <servlet-name>LoginController</servlet-name>
+        <servlet-class>com.controller.LoginController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginController</servlet-name>
+        <url-pattern>/LoginController</url-pattern>
+    </servlet-mapping>
+
 </web-app>
