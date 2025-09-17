@@ -53,7 +53,7 @@
 		<servlet-name>AdminViewClassesController</servlet-name>
 		<url-pattern>/AdminViewClassesController</url-pattern>
 	</servlet-mapping>
-	
+
 	<!--AdminUpdateClassController -->
 	<servlet>
 		<servlet-name>AdminUpdateClassController</servlet-name>
@@ -64,7 +64,7 @@
 		<servlet-name>AdminUpdateClassController</servlet-name>
 		<url-pattern>/AdminUpdateClassController</url-pattern>
 	</servlet-mapping>
-	
+
 	<!-- AdminDeleteClassController -->
 	<servlet>
 		<servlet-name>AdminDeleteClassController</servlet-name>
