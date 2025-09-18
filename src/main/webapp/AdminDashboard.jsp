@@ -15,8 +15,8 @@
 			<li><a href="AdminTeacherRegistration.jsp">Add New User (Teacher)</a></li>
 			<li><a href="AdminUserController">View All Users</a></li>
 			<li><a href="AdminViewClassesController">View Classes</a></li>
-			<li><a href="#">View Attendance</a></li>
-			<li><a href="#">Manage Fees</a></li>
+			<li><a href="AdminViewAttendance.jsp">View Attendance</a></li>
+			<li><a href="AdminManageFees.jsp">Manage Fees</a></li>
 			<li><a href="#">View Enquiries</a></li>
 		</ul>
 	</div>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <title>User Registration</title>
-<link rel="stylesheet" type="text/css" href="css/userRegistration.css">
+<link rel="stylesheet" type="text/css" href="css/AdminTeacherRegistration.css">
 </head>
 <body>
 
