@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+body {
+	background-color: white; /* soft light yellow background */
+	color: #333333; /* primary text color */
+	padding-top: 85px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.page-header {
+	background: url('/media/about-banner.jpg') center/cover no-repeat;
+	height: 40vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #ffffff;
+	text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.bg-color {
+	background-color: #ffc60b; /* for containers and cards */
+	color: #333333;
+}
+
+/* index css start */
+.nav-bg {
+	background-color: #ffc60bf5;
+}
+
+.navbar .nav-link {
+	color: rgb(29, 4, 248); /* your desired color */
+	transition: color 0.3s; /* smooth hover effect */
+}
+
+.navbar .nav-link:hover {
+	color: white; /* hover color */
+}
+
+.banner {
+	height: 70vh;
+	background: url('/media/school.jpg') center/cover no-repeat;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+/* Stats */
+.stats {
+	background: #ffc60bf5;
+	padding: 40px 0;
+}
+
+.stat-box {
+	padding: 20px;
+	background: #bed0dcd6;
+	color: #0d1b2a;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+	background: #ffc60bf5;
+	color: rgb(29, 4, 248);
+	padding: 30px 0;
+}
+
+.footer-textcolor {
+	color: rgb(29, 4, 248);
+}
+
+.form-color {
+	background-color: #e3f2fd;
+}
+
+.form-color-h {
+	background-color: #bed0dcd6;
+}
+
+.bg-index-color {
+	background-color: #2c2c2c7b;
+}
+
+.heading-color {
+	color: #1b4332;
+}

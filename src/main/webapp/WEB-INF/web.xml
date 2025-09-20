@@ -6,6 +6,10 @@
 
 	<display-name>EduHub</display-name>
 
+	<welcome-file-list>
+		<welcome-file>Index.jsp</welcome-file>
+	</welcome-file-list>
+
 	<servlet>
 		<servlet-name>AdminTeacherRegistration</servlet-name>
 		<servlet-class>com.controller.AdminTeacherRegistration</servlet-class>
@@ -52,7 +56,7 @@
 		<servlet-name>AdminViewClassesController</servlet-name>
 		<url-pattern>/AdminViewClassesController</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>AdminUpdateClassController</servlet-name>
 		<servlet-class>com.controller.AdminUpdateClassController</servlet-class>
@@ -72,7 +76,7 @@
 		<servlet-name>AdminViewAttendanceController</servlet-name>
 		<url-pattern>/AdminViewAttendanceController</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>AdminManageFeesController</servlet-name>
 		<servlet-class>com.controller.AdminManageFeesController</servlet-class>
@@ -82,7 +86,7 @@
 		<servlet-name>AdminManageFeesController</servlet-name>
 		<url-pattern>/AdminManageFeesController</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>AdminPayFeesController</servlet-name>
 		<servlet-class>com.controller.AdminPayFeesController</servlet-class>
