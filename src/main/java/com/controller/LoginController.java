@@ -20,13 +20,12 @@ public class LoginController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // The login form uses input name="phone" (it can be phone, email or admission_no)
         String identifier = request.getParameter("phone");
         String password = request.getParameter("password");
 
         try (Connection connection = DBConnection.getConnection()) {
 
-            // ---------- 1) Try parent login (phone OR email) ----------
+            // ---------- 1) Try parent login ----------
             String parentQuery = "SELECT * FROM parent WHERE (phone = ? OR email = ?) AND password = ?";
             try (PreparedStatement psParent = connection.prepareStatement(parentQuery)) {
                 psParent.setString(1, identifier);
@@ -65,6 +64,7 @@ public class LoginController extends HttpServlet {
                                         session.setAttribute("admission_no", rsChildAll.getString("admission_no"));
                                         session.setAttribute("admission_date", rsChildAll.getString("admission_date"));
                                         session.setAttribute("grade", rsChildAll.getString("grade"));
+                                        session.setAttribute("user_id", rsChildAll.getInt("user_id")); // ✅ updated
                                         first = false;
                                     } else {
                                         sj.add(childName);
@@ -77,6 +77,7 @@ public class LoginController extends HttpServlet {
                                     session.removeAttribute("admission_no");
                                     session.removeAttribute("admission_date");
                                     session.removeAttribute("grade");
+                                    session.removeAttribute("user_id");
                                     session.setAttribute("childrenHtml", "<em>No linked student found</em>");
                                 } else {
                                     // if there are additional children, expose them
@@ -96,7 +97,7 @@ public class LoginController extends HttpServlet {
                 }
             }
 
-            // ---------- 2) Try users table (phone OR email OR admission_no) ----------
+            // ---------- 2) Try users table ----------
             String userQuery = "SELECT * FROM users WHERE (phone = ? OR email = ? OR admission_no = ?) AND password = ?";
             try (PreparedStatement psUser = connection.prepareStatement(userQuery)) {
                 psUser.setString(1, identifier);
@@ -110,7 +111,7 @@ public class LoginController extends HttpServlet {
                         String role = rsUser.getString("role");
                         String userName = rsUser.getString("name");
 
-                        session.setAttribute("user_id", rsUser.getInt("user_id"));
+                        session.setAttribute("user_id", rsUser.getInt("user_id")); // ✅ updated for users table
                         session.setAttribute("name", userName);
                         session.setAttribute("role", role);
                         session.setAttribute("admission_no", rsUser.getString("admission_no"));
@@ -124,7 +125,6 @@ public class LoginController extends HttpServlet {
                             session.setAttribute("studentName", userName);
                             session.removeAttribute("childrenHtml");
                         } else {
-                            // for non-student users, don't auto-populate student fields
                             session.removeAttribute("studentName");
                             session.removeAttribute("childrenHtml");
                         }
@@ -134,7 +134,7 @@ public class LoginController extends HttpServlet {
                             response.sendRedirect("AdminDashboard.jsp");
                         } else if ("Teacher".equalsIgnoreCase(role)) {
                             response.sendRedirect("TeacherDashboard.jsp");
-                        } else { // Student or generic User
+                        } else {
                             response.sendRedirect("UserDashboard.jsp");
                         }
                         return;
@@ -142,7 +142,7 @@ public class LoginController extends HttpServlet {
                 }
             }
 
-            // ---------- 3) invalid credentials ----------
+            // ---------- 3) Invalid credentials ----------
             request.setAttribute("errorMessage", "Invalid phone/email/admission_no or password");
             request.getRequestDispatcher("login.jsp").forward(request, response);
 

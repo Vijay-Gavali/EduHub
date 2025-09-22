@@ -4,6 +4,7 @@
 <head>
     <title>Login</title>
     <!-- Link external CSS -->
+    <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
     <div class="login-container">
