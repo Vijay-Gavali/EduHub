@@ -285,7 +285,7 @@
 				</div>
 			</div>
 			<hr>
-			<p class="text-center mb-0 ">&copy; 2025 Edu Hub. All Rights
+			<p class="text-center mb-0 ">&copy; 2025 EduHub. All Rights
 				Reserved.</p>
 		</div>
 	</footer>

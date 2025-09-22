@@ -1,14 +1,11 @@
 package com.controller;
 
-import java.awt.Taskbar.State;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import com.dbconnection.DBConnection;
 import com.model.Classes;

@@ -12,7 +12,8 @@
 
 	<div class="dashboard-menu">
 		<ul>
-			<li><a href="AdminTeacherRegistration.jsp">Add New User (Teacher)</a></li>
+			<li><a href="AdminTeacherRegistration.jsp">Add New Teacher</a></li>
+			<li><a href="userRegistration.jsp">Add New Student</a></li>
 			<li><a href="AdminUserController">View All Users</a></li>
 			<li><a href="AdminViewClassesController">View Classes</a></li>
 			<li><a href="AdminViewAttendance.jsp">View Attendance</a></li>
