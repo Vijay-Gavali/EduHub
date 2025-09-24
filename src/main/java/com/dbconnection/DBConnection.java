@@ -2,8 +2,7 @@ package com.dbconnection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.Statement;
-import java.util.Scanner;
+
 
 public class DBConnection {
 
@@ -19,7 +18,6 @@ public class DBConnection {
 		} catch (Exception e) {
 			System.err.println(e);
 		}
-
 		return con;
 	}
 }

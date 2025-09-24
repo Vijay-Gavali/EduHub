@@ -7,7 +7,9 @@
 <html>
 <head>
     <title>User Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="css/userdashboard.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/userdashboard.css" type="text/css">
 </head>
 <body>
 <%
@@ -21,126 +23,162 @@
 
     String view = request.getParameter("view");
     if (view == null) {
-        view = "menu"; // default view: only show menu
+        view = "menu"; // default view
     }
 %>
 
-<header class="navbar">
-    <div class="brand">EduHub</div>
-    <div class="welcome">Welcome <strong><%= role %></strong>, <%= name %></div>
-</header>
-
-<main>
-    <!-- Menu Options -->
-    <div class="menu" style="text-align:center; margin-bottom:20px;">
-        <form action="UserDashboard.jsp" method="get" style="display:inline;">
-            <input type="hidden" name="view" value="student"/>
-            <button type="submit">View Student Details</button>
-        </form>
-
-        <form action="UserAttendanceController" method="get" style="display:inline;">
-            <button type="submit">View Attendance</button>
-        </form>
-
-        <form action="UserFeesController" method="get" style="display:inline;">
-            <button type="submit">View Fees</button>
-        </form>
+<!-- Common Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark nav-bg fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="Index.jsp">
+            <img src="./media/ed hub logo.png" alt="Edu Hub Logo" width="60" height="60" class="d-inline-block me-2">
+            EduHub
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.jsp">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.jsp">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.jsp">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="logout.jsp">Logout</a></li>
+            </ul>
+        </div>
     </div>
+</nav>
 
-    <!-- Student Details Card -->
-    <section id="student" class="card" style="<%= "student".equals(view) ? "" : "display:none;" %>">
-        <h3>Student Details</h3>
-        <p><strong>Name:</strong> <%= session.getAttribute("studentName") != null ? session.getAttribute("studentName") : "N/A" %></p>
-        <p><strong>Admission No:</strong> <%= session.getAttribute("admission_no") != null ? session.getAttribute("admission_no") : "N/A" %></p>
-        <p><strong>Admission Date:</strong> <%= session.getAttribute("admission_date") != null ? session.getAttribute("admission_date") : "N/A" %></p>
-        <p><strong>Grade:</strong> <%= session.getAttribute("grade") != null ? session.getAttribute("grade") : "N/A" %></p>
-        <p><strong>User ID:</strong> <%= session.getAttribute("user_id") != null ? session.getAttribute("user_id") : "N/A" %></p>
-        <%
-            String extra = (String) session.getAttribute("childrenHtml");
-            if (extra != null) {
-        %>
-            <div class="extra-children"><%= extra %></div>
-        <%
-            }
-        %>
-    </section>
+<!-- Content -->
+<div class="container-fluid" style="margin-top: 90px;">
+    <div class="row">
+        
+        <!-- Sidebar -->
+        <div class="col-md-3 col-lg-2 bg-light p-3 border-end sidebar">
+            <h5 class="text-center mb-3">Dashboard Menu</h5>
+            <form action="UserDashboard.jsp" method="get" class="d-grid gap-2 mb-2">
+                <input type="hidden" name="view" value="student"/>
+                <button type="submit" class="btn btn-primary w-100">Student Details</button>
+            </form>
+            <form action="UserAttendanceController" method="get" class="d-grid gap-2 mb-2">
+                <button type="submit" class="btn btn-success w-100">Attendance</button>
+            </form>
+            <form action="UserFeesController" method="get" class="d-grid gap-2 mb-2">
+                <button type="submit" class="btn btn-warning w-100">Fees</button>
+            </form>
+        </div>
 
-    <!-- Attendance Card -->
-    <section id="attendance" class="card" style="<%= "attendance".equals(view) ? "" : "display:none;" %>">
-        <h3>Attendance</h3>
-        <%
-            List<AttendanceRecord> attendanceList =
-                (List<AttendanceRecord>) session.getAttribute("attendanceList");
+        <!-- Main Content -->
+        <div class="col-md-9 col-lg-10 p-4">
+            <div class="alert alert-primary text-center">
+                Welcome <strong><%= role %></strong>, <%= name %>
+            </div>
 
-            if (attendanceList == null || attendanceList.isEmpty()) {
-        %>
-            <p>No attendance records available.</p>
-        <%
-            } else {
-        %>
-            <table border="1" cellpadding="5" cellspacing="0" style="width:100%; text-align:center;">
-                <tr>
-                    <th>Date</th>
-                    <th>Status</th>
-                </tr>
-                <%
-                    for (AttendanceRecord record : attendanceList) {
-                %>
-                    <tr>
-                        <td><%= record.getDate() %></td>
-                        <td><%= record.getStatus() %></td>
-                    </tr>
-                <%
-                    }
-                %>
-            </table>
-        <%
-            }
-        %>
-    </section>
+            <!-- Student Details Card -->
+            <section id="student" class="card mb-4" style="<%= "student".equals(view) ? "" : "display:none;" %>">
+                <div class="card-body">
+                    <h3 class="card-title">Student Details</h3>
+                    <p><strong>Name:</strong> <%= session.getAttribute("studentName") != null ? session.getAttribute("studentName") : "N/A" %></p>
+                    <p><strong>Admission No:</strong> <%= session.getAttribute("admission_no") != null ? session.getAttribute("admission_no") : "N/A" %></p>
+                    <p><strong>Admission Date:</strong> <%= session.getAttribute("admission_date") != null ? session.getAttribute("admission_date") : "N/A" %></p>
+                    <p><strong>Grade:</strong> <%= session.getAttribute("grade") != null ? session.getAttribute("grade") : "N/A" %></p>
+                    
+                    <%
+                        String extra = (String) session.getAttribute("childrenHtml");
+                        if (extra != null) {
+                    %>
+                        <div class="extra-children"><%= extra %></div>
+                    <%
+                        }
+                    %>
+                </div>
+            </section>
 
-    <!-- Fees Card -->
-    <section id="fees" class="card" style="<%= "fees".equals(view) ? "" : "display:none;" %>">
-        <h3>Fees</h3>
-        <%
-            List<FeeRecord> feesList = (List<FeeRecord>) session.getAttribute("feesList");
+            <!-- Attendance Card -->
+            <section id="attendance" class="card mb-4" style="<%= "attendance".equals(view) ? "" : "display:none;" %>">
+                <div class="card-body">
+                    <h3 class="card-title">Attendance</h3>
+                    <%
+                        List<AttendanceRecord> attendanceList =
+                            (List<AttendanceRecord>) session.getAttribute("attendanceList");
 
-            if (feesList == null || feesList.isEmpty()) {
-        %>
-            <p>No fees records available.</p>
-        <%
-            } else {
-        %>
-            <table border="1" cellpadding="5" cellspacing="0" style="width:100%; text-align:center;">
-                <tr>
-                    <th>Amount</th>
-                    <th>Due Date</th>
-                    <th>Status</th>
-                    <th>Payment Date</th>
-                </tr>
-                <%
-                    for (FeeRecord record : feesList) {
-                %>
-                    <tr>
-                        <td><%= record.getAmount() %></td>
-                        <td><%= record.getDueDate() %></td>
-                        <td><%= record.getPaymentStatus() %></td>
-                        <td><%= record.getPaymentDate() != null ? record.getPaymentDate() : "-" %></td>
-                    </tr>
-                <%
-                    }
-                %>
-            </table>
-        <%
-            }
-        %>
-    </section>
+                        if (attendanceList == null || attendanceList.isEmpty()) {
+                    %>
+                        <p>No attendance records available.</p>
+                    <%
+                        } else {
+                    %>
+                        <table class="table table-bordered text-center">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <%
+                                for (AttendanceRecord record : attendanceList) {
+                            %>
+                                <tr>
+                                    <td><%= record.getDate() %></td>
+                                    <td><%= record.getStatus() %></td>
+                                </tr>
+                            <%
+                                }
+                            %>
+                            </tbody>
+                        </table>
+                    <%
+                        }
+                    %>
+                </div>
+            </section>
 
-    <!-- Logout -->
-    <div class="logout" style="text-align:center; margin-top:20px;">
-        <a href="logout.jsp">Logout</a>
+            <!-- Fees Card -->
+            <section id="fees" class="card mb-4" style="<%= "fees".equals(view) ? "" : "display:none;" %>">
+                <div class="card-body">
+                    <h3 class="card-title">Fees</h3>
+                    <%
+                        List<FeeRecord> feesList = (List<FeeRecord>) session.getAttribute("feesList");
+
+                        if (feesList == null || feesList.isEmpty()) {
+                    %>
+                        <p>No fees records available.</p>
+                    <%
+                        } else {
+                    %>
+                        <table class="table table-bordered text-center">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Amount</th>
+                                    <th>Due Date</th>
+                                    <th>Status</th>
+                                    <th>Payment Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <%
+                                for (FeeRecord record : feesList) {
+                            %>
+                                <tr>
+                                    <td><%= record.getAmount() %></td>
+                                    <td><%= record.getDueDate() %></td>
+                                    <td><%= record.getPaymentStatus() %></td>
+                                    <td><%= record.getPaymentDate() != null ? record.getPaymentDate() : "-" %></td>
+                                </tr>
+                            <%
+                                }
+                            %>
+                            </tbody>
+                        </table>
+                    <%
+                        }
+                    %>
+                </div>
+            </section>
+        </div>
     </div>
-</main>
+</div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
