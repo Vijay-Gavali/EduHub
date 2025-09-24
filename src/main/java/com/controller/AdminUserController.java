@@ -31,7 +31,7 @@ public class AdminUserController extends HttpServlet {
 			while (rs.next()) {
 
 				Map<String, Object> user = new HashMap<>();
-				
+
 				user.put("user_id", rs.getInt("user_id"));
 				user.put("name", rs.getString("name"));
 				user.put("email", rs.getString("email"));

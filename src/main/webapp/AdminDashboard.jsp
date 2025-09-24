@@ -3,12 +3,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Admin Dashboard</title>
-<link rel="stylesheet" type="text/css" href="css/AdminDashboard.css">
-</head>
+<title>Admin Dashboard - EduHub</title>
+<link rel="stylesheet" href="css/AdminDashboard.css" type="text/css">
+<style><%@include file="css/AdminDashboard.css"%></style></head>
 <body>
-
-	<h1>Welcome Admin</h1>
+	<nav class="navbar">
+		<div class="logo-container">
+			<div class="logo">
+				<img src="media/ed hub logo.png" alt="EduHub Logo">
+			</div>
+			<span class="brand-name">EduHub Admin</span>
+		</div>
+		<div class="logout-btn">
+			<a href="logout.jsp">Logout</a>
+		</div>
+	</nav>
 
 	<div class="dashboard-menu">
 		<ul>
@@ -21,5 +30,6 @@
 			<li><a href="#">View Enquiries</a></li>
 		</ul>
 	</div>
+
 </body>
 </html>

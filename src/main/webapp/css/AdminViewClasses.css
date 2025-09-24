@@ -1,0 +1,253 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Container */
+.container {
+    width: 1000px;
+    margin-top: 70px;
+    margin-left:280px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    padding: 25px;
+}
+
+/* Heading */
+h2 {
+    text-align: center;
+    color: #2d3748;
+    font-size: 26px;
+    margin-bottom: 0px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 2px;
+}
+
+/* Table Styles */
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    font-size: 13px;
+    min-width: 500px;
+}
+
+th {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-weight: 600;
+    padding: 12px 10px;
+    text-align: left;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+th:first-child {
+    border-top-left-radius: 8px;
+}
+
+th:last-child {
+    border-top-right-radius: 8px;
+}
+
+td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #4a5568;
+    font-size: 13px;
+}
+
+tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+tr:hover {
+    background-color: #f1f5f9;
+    transition: background-color 0.2s ease;
+}
+
+a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: inline-block;
+    text-align: center;
+    min-width: 60px;
+    font-size: 12px;
+    margin: 2px;
+}
+
+a[href*="Update"] {
+    background: linear-gradient(135deg, #48bb78, #38a169);
+    color: white;
+}
+
+a[href*="Update"]:hover {
+    background: linear-gradient(135deg, #38a169, #2f855a);
+    transform: translateY(-1px);
+}
+
+a[href*="Delete"] {
+    background: linear-gradient(135deg, #f56565, #e53e3e);
+    color: white;
+}
+
+a[href*="Delete"]:hover {
+    background: linear-gradient(135deg, #e53e3e, #c53030);
+    transform: translateY(-1px);
+}
+
+/* No Data Message */
+td[colspan] {
+    text-align: center;
+    color: #718096;
+    font-style: italic;
+    padding: 30px;
+    background-color: #f7fafc;
+    font-size: 14px;
+}
+
+/* Action column specific styling */
+td:last-child {
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin: 15px;
+        padding: 15px;
+    }
+    
+    h2 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+    
+    th, td {
+        padding: 10px 6px;
+        font-size: 12px;
+    }
+    
+    a {
+        padding: 4px 8px;
+        font-size: 11px;
+        min-width: 50px;
+        margin: 1px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        margin: 5px;
+        padding: 10px;
+    }
+    
+    h2 {
+        font-size: 18px;
+    }
+    
+    th, td {
+        padding: 8px 4px;
+        font-size: 11px;
+    }
+    
+    table {
+        min-width: 400px;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.table-wrapper {
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Compact button container */
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.add-button {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    transition: all 0.2s ease;
+}
+
+.add-button:hover {
+    transform: translateY(-1px);
+}
+
+/* Make table columns more compact */
+th:nth-child(1), td:nth-child(1) { /* Class ID */
+    width: 80px;
+    text-align: center;
+}
+
+th:nth-child(2), td:nth-child(2) { /* Class Name */
+    width: 120px;
+}
+
+th:nth-child(3), td:nth-child(3) { /* Fees */
+    width: 100px;
+    text-align: right;
+}
+
+th:nth-child(4), td:nth-child(4) { /* Class Teacher */
+    width: 100px;
+    text-align: center;
+}
+
+th:nth-child(5), td:nth-child(5) { /* Actions */
+    width: 150px;
+    text-align: center;
+}

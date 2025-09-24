@@ -9,52 +9,60 @@
 <head>
 <meta charset="UTF-8">
 <title>Admin Classes</title>
+<link rel="stylesheet" href="css/AdminViewClasses.css" type="text/css">
+<style><%@include file="css/AdminViewClasses.css"%></style>
 </head>
 <body>
+<jsp:include page="./AdminDashboard.jsp"></jsp:include>
+    <div class="container">
+        <h2>All Classes</h2>
+        
+        <!-- Optional: Add button for creating new classes -->
+        <div class="button-container">
+            <a href="add-class.jsp" class="add-button">+ Add New Class</a>
+        </div>
 
-	<h2>All Classes</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Class ID</th>
+                        <th>Class Name</th>
+                        <th>Fees</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%
+                    List<Classes> classList = (List<Classes>) request.getAttribute("classList");
 
-	<table border="1" width="80%" align="center">
-		<tr>
-			<th>Class ID</th>
-			<th>Class Name</th>
-			<th>Fees</th>
-			<th>Class Teacher</th>
-			<th>Update</th>
-			<th>Delete</th>
-		</tr>
-
-		<%
-		List<Classes> classList = (List<Classes>) request.getAttribute("classList");
-
-		if (classList != null && !classList.isEmpty()) {
-			for (Classes cls : classList) {
-				int classId = cls.getClassId();
-		%>
-		<tr>
-			<td><%=cls.getClassId()%></td>
-			<td><%=cls.getClassName()%></td>
-			<td><%=cls.getFees()%></td>
-			<td><%=cls.getTeacherId()%></td>
-			<td><a
-				href="AdminUpdateClassController?classId=<%=cls.getClassId()%>">Update</a>
-			</td>
-			<td><a
-				href="AdminDeleteClassController?classId=<%=cls.getClassId()%>"
-				onclick="return confirm('Are you sure?');">Delete</a></td>
-
-		</tr>
-		<%
-		}
-		} else {
-		%>
-		<tr>
-			<td colspan="4" style="text-align: center;">No classes found.</td>
-		</tr>
-		<%
-		}
-		%>
-
-	</table>
+                    if (classList != null && !classList.isEmpty()) {
+                        for (Classes cls : classList) {
+                            int classId = cls.getClassId();
+                    %>
+                    <tr>
+                        <td><%=cls.getClassId()%></td>
+                        <td><%=cls.getClassName()%></td>
+                        <td>₹<%=cls.getFees()%></td>
+                        <td style="text-align: center;">
+                            <a href="AdminUpdateClassController?classId=<%=cls.getClassId()%>">Update</a>
+                            <a href="AdminDeleteClassController?classId=<%=cls.getClassId()%>" 
+                               onclick="return confirm('Are you sure you want to delete this class?');">Delete</a>
+                        </td>
+                    </tr>
+                    <%
+                        }
+                    } else {
+                    %>
+                    <tr>
+                        <td colspan="5" style="text-align: center;">No classes found.</td>
+                    </tr>
+                    <%
+                    }
+                    %>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
 </html>

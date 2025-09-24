@@ -1,0 +1,298 @@
+@charset "UTF-8";
+/* Attendance Page Styles */
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+}
+
+/* Main Container */
+.attendance-container {
+	max-width: 1200px;
+	margin: 80px auto 40px;
+	padding: 0 20px;
+}
+
+/* Header Styles */
+.attendance-header {
+	text-align: center;
+	margin-bottom: 20px;
+		margin-top: 20px;
+	
+}
+
+.attendance-header h2 {
+	color: black;
+	font-size: 32px;
+	font-weight: 600;
+	margin-bottom: 0px;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.attendance-header h3 {
+	color: #e2e8f0;
+	font-size: 20px;
+	font-weight: 400;
+	margin: 5px 0;
+}
+
+/* Form Styles */
+.attendance-form {
+	background: #fff;
+	padding: 30px;
+	border-radius: 12px;
+	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+	margin: 0 auto 40px;
+	max-width: 500px;
+}
+
+.form-group {
+	margin-bottom: 20px;
+}
+
+.form-group label {
+	display: block;
+	font-weight: 600;
+	margin-bottom: 8px;
+	color: #2d3748;
+	font-size: 14px;
+}
+
+.form-group input[type="number"] {
+	width: 100%;
+	padding: 12px 15px;
+	border: 2px solid #e2e8f0;
+	border-radius: 8px;
+	font-size: 15px;
+	outline: none;
+	transition: all 0.3s ease;
+	box-sizing: border-box;
+	background: #fafafa;
+}
+
+.form-group input[type="number"]:focus {
+	border-color: #667eea;
+	background: #fff;
+	box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.submit-btn {
+	width: 100%;
+	padding: 14px;
+	background: linear-gradient(135deg, #667eea, #764ba2);
+	color: white;
+	border: none;
+	border-radius: 8px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 15px rgba(102, 126, 234, 0.4);
+}
+
+.submit-btn:active {
+	transform: translateY(0);
+}
+
+/* Student Info Styles */
+.student-info {
+	background: #fff;
+	padding: 25px;
+	border-radius: 12px;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.student-info h3 {
+	color: #2d3748;
+	margin: 10px 0;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+/* Table Styles */
+.attendance-table-container {
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	margin-bottom: 30px;
+}
+
+.attendance-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 14px;
+}
+
+.attendance-table th {
+	background: linear-gradient(135deg, #667eea, #764ba2);
+	color: white;
+	padding: 15px 12px;
+	text-align: left;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	font-size: 13px;
+}
+
+.attendance-table td {
+	padding: 12px;
+	border-bottom: 1px solid #e2e8f0;
+	color: #4a5568;
+}
+
+.attendance-table tr:nth-child(even) {
+	background-color: #f8fafc;
+}
+
+.attendance-table tr:hover {
+	background-color: #f1f5f9;
+	transition: background-color 0.2s ease;
+}
+
+/* Status Badges */
+.status-present {
+	color: #38a169;
+	font-weight: 600;
+	background: #c6f6d5;
+	padding: 4px 8px;
+	border-radius: 4px;
+	display: inline-block;
+}
+
+.status-absent {
+	color: #e53e3e;
+	font-weight: 600;
+	background: #fed7d7;
+	padding: 4px 8px;
+	border-radius: 4px;
+	display: inline-block;
+}
+
+/* No Records Message */
+.no-records {
+	text-align: center;
+	padding: 40px;
+	color: #718096;
+	font-style: italic;
+	background: #f7fafc;
+	border-radius: 8px;
+	margin: 20px 0;
+}
+
+/* Error Message */
+.error-message {
+	text-align: center;
+	color: #e53e3e;
+	background: #fed7d7;
+	padding: 15px;
+	border-radius: 8px;
+	margin: 20px 0;
+	border-left: 4px solid #e53e3e;
+}
+
+/* Success Message */
+.success-message {
+	text-align: center;
+	color: #38a169;
+	background: #c6f6d5;
+	padding: 15px;
+	border-radius: 8px;
+	margin: 20px 0;
+	border-left: 4px solid #38a169;
+}
+
+/* Responsive Design */
+@media ( max-width : 768px) {
+	.attendance-container {
+		margin: 70px auto 30px;
+		padding: 0 15px;
+	}
+	.attendance-header h2 {
+		font-size: 26px;
+	}
+	.attendance-form {
+		padding: 20px;
+		margin-bottom: 30px;
+	}
+	.attendance-table th, .attendance-table td {
+		padding: 10px 8px;
+		font-size: 13px;
+	}
+	.student-info {
+		padding: 20px;
+	}
+}
+
+@media ( max-width : 480px) {
+	.attendance-container {
+		margin: 60px auto 20px;
+		padding: 0 10px;
+	}
+	.attendance-header h2 {
+		font-size: 22px;
+	}
+	.attendance-form {
+		padding: 15px;
+	}
+	.form-group input[type="number"] {
+		padding: 10px 12px;
+		font-size: 14px;
+	}
+	.submit-btn {
+		padding: 12px;
+		font-size: 15px;
+	}
+	.attendance-table {
+		font-size: 12px;
+	}
+	.attendance-table th, .attendance-table td {
+		padding: 8px 6px;
+	}
+}
+
+/* Animation */
+@keyframes fadeInUp {from { opacity:0;
+	transform: translateY(30px);
+}
+
+to {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+}
+.attendance-form, .student-info, .attendance-table-container {
+	animation: fadeInUp 0.6s ease-out;
+}
+
+/* Loading State */
+.loading {
+	opacity: 0.7;
+	pointer-events: none;
+}
+
+/* Print Styles */
+@media print {
+	body {
+		background: white !important;
+	}
+	.attendance-form {
+		display: none;
+	}
+	.attendance-table-container {
+		box-shadow: none;
+	}
+	.attendance-table th {
+		background: #2d3748 !important;
+		color: white !important;
+		-webkit-print-color-adjust: exact;
+	}
+}

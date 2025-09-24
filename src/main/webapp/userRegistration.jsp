@@ -1,42 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*, com.dbconnection.DBConnection" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>User Registration</title>
+    <title>Student Registration</title>
     <link rel="stylesheet" type="text/css" href="css/userRegistration.css">
-    <script>
-        function toggleStudentFields() {
-            var role = document.querySelector('select[name="role"]').value;
-            var studentFields = document.querySelectorAll('.student-field');
-            if(role === "Student") {
-                studentFields.forEach(f => f.style.display = "block");
-            } else {
-                studentFields.forEach(f => f.style.display = "none");
-            }
-        }
-        window.onload = function() {
-            toggleStudentFields(); // hide fields on page load
-            document.querySelector('select[name="role"]').addEventListener('change', toggleStudentFields);
-        }
-    </script>
+    <style><%@include file="css/userRegistration.css"%></style>
 </head>
 <body>
+<jsp:include page="./AdminDashboard.jsp"></jsp:include>
+
     <div class="form-container">
         <form action="UserRegistration" method="post">
-            <h2>User Registration</h2>
-
-            <!-- Admission details -->
-            <div class="form-group">
-                <label>Admission Number:</label>
-                <input type="text" name="admission_no" />
-            </div>
-
-            <div class="form-group">
-                <label>Admission Date:</label>
-                <input type="date" name="admission_date" />
-            </div>
-
+            <h2>Student Registration</h2>
+            
             <!-- Personal details -->
             <div class="form-group">
                 <label>Name:</label>
@@ -88,16 +65,6 @@
                 <input type="text" name="contact_no" />
             </div>
 
-            <div class="form-group">
-                <label>Role:</label>
-                <select name="role" required>
-                    <option value="">Select Role</option>
-                    <option value="Student">Student</option>
-                    <option value="Parent">Parent</option>
-                </select>
-            </div>
-
-            <!-- Student-only fields -->
             <div class="form-group student-field">
                 <label>Age:</label>
                 <input type="number" name="age" />
@@ -108,25 +75,34 @@
                 <input type="text" name="grade" />
             </div>
 
-            <div class="form-group student-field">
-                <label>Select Class:</label>
-                <select name="class_id">
-                    <option value="">Select Class</option>
-                    <option value="1">1st Standard</option>
-                    <option value="2">2nd Standard</option>
-                    <option value="3">3rd Standard</option>
-                    <option value="4">4th Standard</option>
-                    <option value="5">5th Standard</option>
-                    <option value="6">6th Standard</option>
-                    <option value="7">7th Standard</option>
-                    <option value="8">8th Standard</option>
-                    <option value="9">9th Standard</option>
-                    <option value="10">10th Standard</option>
+            <div class="form-group">
+                <label>Select Class To Student:</label> 
+                <select name="class_id" required>
+                    <%
+                        try {
+                            Connection con = DBConnection.getConnection();
+                            String sql = "SELECT class_id, class_name FROM class";
+                            PreparedStatement ps = con.prepareStatement(sql);
+                            ResultSet rs = ps.executeQuery();
+                            while(rs.next()) {
+                                int id = rs.getInt("class_id");
+                                String className = rs.getString("class_name");
+                    %>
+                                <option value="<%= id %>"><%= className %></option>
+                    <%
+                            }
+                            rs.close();
+                            ps.close();
+                            con.close();
+                        } catch(Exception e) {
+                            e.printStackTrace();
+                        }
+                    %>
                 </select>
             </div>
 
             <div class="form-group">
-                <input type="submit" value="Register User" />
+                <input type="submit" value="Register Student" />
             </div>
         </form>
     </div>
