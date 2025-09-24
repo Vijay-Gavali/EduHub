@@ -5,7 +5,6 @@
 <head>
     <title>Student Registration</title>
     <link rel="stylesheet" type="text/css" href="css/userRegistration.css">
-    <style><%@include file="css/userRegistration.css"%></style>
 </head>
 <body>
 <jsp:include page="./AdminDashboard.jsp"></jsp:include>
@@ -14,6 +13,23 @@
         <form action="UserRegistration" method="post">
             <h2>Student Registration</h2>
             
+            <!-- Display Messages -->
+            <% 
+            String message = (String) request.getAttribute("message");
+            String messageType = (String) request.getAttribute("messageType");
+            if (message != null) { 
+            %>
+                <div class="message <%= messageType %>">
+                    <%= message %>
+                </div>
+            <% } %>
+            
+            <!-- Admission details -->
+            <div class="form-group">
+                <label>Admission Date:</label>
+                <input type="date" name="admission_date" />
+            </div>
+
             <!-- Personal details -->
             <div class="form-group">
                 <label>Name:</label>
@@ -21,7 +37,7 @@
             </div>
 
             <div class="form-group">
-                <label>Email (Gmail):</label>
+                <label>Email:</label>
                 <input type="email" name="email" required />
             </div>
 
@@ -65,19 +81,20 @@
                 <input type="text" name="contact_no" />
             </div>
 
-            <div class="form-group student-field">
+            <div class="form-group">
                 <label>Age:</label>
                 <input type="number" name="age" />
             </div>
 
-            <div class="form-group student-field">
+            <div class="form-group">
                 <label>Grade:</label>
                 <input type="text" name="grade" />
             </div>
 
             <div class="form-group">
-                <label>Select Class To Student:</label> 
+                <label>Select Class:</label> 
                 <select name="class_id" required>
+                    <option value="">Select a Class</option>
                     <%
                         try {
                             Connection con = DBConnection.getConnection();
