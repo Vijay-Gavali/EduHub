@@ -17,46 +17,46 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class AdminUserController extends HttpServlet {
+public class AdminStudentViewController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        List<Map<String, Object>> teacherList = new ArrayList<>();
+        List<Map<String, Object>> studentList = new ArrayList<>();
 
         try {
             Connection con = DBConnection.getConnection();
             Statement stmt = con.createStatement();
             
-            // Fetch only teachers
-            ResultSet rs = stmt.executeQuery("SELECT * FROM users WHERE role = 'Teacher'");
+            // Fetch only student
+            ResultSet rs = stmt.executeQuery("SELECT * FROM users WHERE role = 'Student'");
 
             while (rs.next()) {
-                Map<String, Object> teacher = new HashMap<>();
+                Map<String, Object> student = new HashMap<>();
 
-                teacher.put("user_id", rs.getInt("user_id"));
-                teacher.put("name", rs.getString("name"));
-                teacher.put("email", rs.getString("email"));
-                teacher.put("contact_no", rs.getString("contact_no"));
-                teacher.put("role", rs.getString("role"));
-                teacher.put("age", rs.getInt("age"));
-                teacher.put("grade", rs.getString("grade"));
-                teacher.put("class_id", rs.getInt("class_id"));
+                student.put("user_id", rs.getInt("user_id"));
+                student.put("name", rs.getString("name"));
+                student.put("email", rs.getString("email"));
+                student.put("contact_no", rs.getString("contact_no"));
+                student.put("role", rs.getString("role"));
+                student.put("age", rs.getInt("age"));
+                student.put("grade", rs.getString("grade"));
+                student.put("class_id", rs.getInt("class_id"));
 
-                teacherList.add(teacher);
+                studentList.add(student);
             }
 
             rs.close();
             stmt.close();
             con.close();
 
-            request.setAttribute("teacherList", teacherList);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("AdminViewUsers.jsp");
+            request.setAttribute("studentList", studentList);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("AdminStudentView.jsp");
             dispatcher.forward(request, response);
 
         } catch (Exception e) {
             e.printStackTrace();
             request.setAttribute("error", "Error fetching teacher data: " + e.getMessage());
-            RequestDispatcher dispatcher = request.getRequestDispatcher("AdminViewUsers.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("AdminStudentView.jsp");
             dispatcher.forward(request, response);
         }
     }

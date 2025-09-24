@@ -108,32 +108,42 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>UserRegistration</servlet-name>
-		<servlet-class>com.controller.UserRegistration</servlet-class>
+		<servlet-name>AdminStudentRegistration</servlet-name>
+		<servlet-class>com.controller.AdminStudentRegistration</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>UserRegistration</servlet-name>
-		<url-pattern>/UserRegistration</url-pattern>
+		<servlet-name>AdminStudentRegistration</servlet-name>
+		<url-pattern>/AdminStudentRegistration</url-pattern>
 	</servlet-mapping>
-	
-	 <servlet>
-        <servlet-name>UserAttendanceController</servlet-name>
-        <servlet-class>com.controller.UserAttendanceController</servlet-class>
-    </servlet>
 
-    <servlet-mapping>
-        <servlet-name>UserAttendanceController</servlet-name>
-        <url-pattern>/UserAttendanceController</url-pattern>
-    </servlet-mapping>
-    
-    <servlet>
-    <servlet-name>UserFeesController</servlet-name>
-    <servlet-class>com.controller.UserFeesController</servlet-class>
-</servlet>
+	<servlet>
+		<servlet-name>UserAttendanceController</servlet-name>
+		<servlet-class>com.controller.UserAttendanceController</servlet-class>
+	</servlet>
 
-<servlet-mapping>
-    <servlet-name>UserFeesController</servlet-name>
-    <url-pattern>/UserFeesController</url-pattern>
-</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserAttendanceController</servlet-name>
+		<url-pattern>/UserAttendanceController</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UserFeesController</servlet-name>
+		<servlet-class>com.controller.UserFeesController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>UserFeesController</servlet-name>
+		<url-pattern>/UserFeesController</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AdminStudentViewController</servlet-name>
+		<servlet-class>com.controller.AdminStudentViewController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AdminStudentViewController</servlet-name>
+		<url-pattern>/AdminStudentViewController</url-pattern>
+	</servlet-mapping>
 </web-app>

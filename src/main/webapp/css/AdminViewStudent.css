@@ -1,0 +1,149 @@
+/* Reset and base styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Arial', sans-serif;
+}
+
+body {
+	background-color: #f5f5f5;
+	color: #333;
+	line-height: 1.4;
+}
+
+/* Main content area - adjust for sidebar */
+.main-content {
+
+}
+
+/* Header Styles */
+h2 {
+	color: #2c3e50;
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin: 15px 0;
+	padding: 10px 0;
+	border-bottom: 2px solid #3498db;
+}
+
+/* Table Container for proper border radius */
+.table-container {
+		margin-top: 80px;
+	margin-left: 320px;
+	padding: 20px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+/* Table Styles */
+table {
+	width: 100%;
+	margin: 20px auto;
+	border-collapse: collapse;
+	background: white;
+	border: none;
+	font-size: 14px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+/* Table Header */
+th {
+	background: #3498db;
+	color: white;
+	font-weight: bold;
+	padding: 12px 30px;
+	text-align: left;
+	border: 1px solid #2980b9;
+	font-size: 13px;
+}
+
+/* Remove border from first and last header cells for better rounded corners */
+th:first-child {
+	border-left: none;
+}
+
+th:last-child {
+	border-right: none;
+}
+
+/* Table Cells */
+td {
+	padding: 10px;
+	border: 1px solid #ddd;
+	color: #333;
+}
+
+/* Remove border from first and last cells in each row for better rounded corners */
+tr td:first-child {
+	border-left: none;
+}
+
+tr td:last-child {
+	border-right: none;
+}
+
+/* Remove bottom border from last row for better rounded corners */
+tr:last-child td {
+	border-bottom: none;
+}
+
+/* Alternate row colors */
+tr:nth-child(even) {
+	background-color: #f9f9f9;
+}
+
+/* Action Links - Simple styling */
+td a {
+	display: inline-block;
+	padding: 4px 8px;
+	text-decoration: none;
+	font-size: 12px;
+	margin: 0 2px;
+	border-radius: 2px;
+}
+
+/* Update Link */
+td a[href*="AdminUpdateUserController"] {
+	background: #28a745;
+	color: white;
+}
+
+/* Delete Link */
+td a[href*="AdminDeleteUserController"] {
+	background: #dc3545;
+	color: white;
+}
+
+td a:hover {
+	opacity: 0.9;
+}
+
+/* Empty State */
+tr:last-child td[colspan="8"] {
+	text-align: center;
+	padding: 20px;
+	color: #666;
+	font-style: italic;
+}
+
+/* Remove the inline border since we're adding our own */
+table[border="1"] {
+	border: none;
+}
+
+/* Simple responsive design */
+@media ( max-width : 768px) {
+	.main-content {
+		margin-left: 0;
+		padding: 10px;
+	}
+	table {
+		width: 100%;
+		font-size: 12px;
+	}
+	th, td {
+		padding: 8px 6px;
+	}
+}
