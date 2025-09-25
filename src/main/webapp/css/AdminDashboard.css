@@ -66,11 +66,10 @@ body {
 }
 
 
-/* Dashboard Menu - Full Left Side */
 .dashboard-menu {
     position: fixed;
     left: 0;
-    top: 80px; /* Increased to match navbar height */
+    top: 80px;
     width: 250px;
     height: calc(100vh - 80px); /* Adjusted for larger navbar */
     background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
