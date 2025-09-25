@@ -102,7 +102,7 @@ public class UserRegistration extends HttpServlet {
             request.setAttribute("messageType", "error");
         }
         
-        RequestDispatcher rd = request.getRequestDispatcher("UserRegistration.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("userRegistration.jsp");
         rd.forward(request, response);
     }
 }
