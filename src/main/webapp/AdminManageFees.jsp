@@ -76,7 +76,7 @@
                 %>
                 <tr>
                     <td><%=fee.get("fees_id")%></td>
-                    <td><%=fee.get("student_id")%></td>
+                    <td><%=fee.get("user_id")%></td>
                     <td><%=fee.get("student_name")%></td>
                     <td>₹<%=fee.get("amount")%></td>
                     <td>₹<%=fee.get("paid_amount")%></td>
@@ -89,7 +89,7 @@
                         %>
                         <form method="post" action="AdminPayFeesController" class="payment-form">
                             <input type="hidden" name="feesId" value="<%=fee.get("fees_id")%>">
-                            <input type="hidden" name="studentId" value="<%=fee.get("student_id")%>">
+                            <input type="hidden" name="studentId" value="<%=fee.get("user_id")%>">
                             <input type="number" name="payAmount" placeholder="Amount" min="0.01"
                                 max="<%=fee.get("remaining_amount")%>" step="0.01" class="payment-input" required>
                             <button type="submit" class="payment-btn">Pay</button>

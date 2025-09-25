@@ -45,7 +45,7 @@
                         <td><%=user.get("contact_no")%></td>
                         <td><%=classId != null ? classId : "N/A"%></td>
                         <td>
-                            <a href="AdminUpdateUserController?userId=<%=userId%>">
+                            <a href="AdminUpdateTeacherController?userId=<%=userId%>">
                                 Update
                             </a>
                             <a href="AdminDeleteUserController?userId=<%=userId%>"
@@ -73,19 +73,5 @@
         </div>
     </div>
 
-    <script>
-        // Enhanced confirmation dialog
-        document.addEventListener('DOMContentLoaded', function() {
-            const deleteLinks = document.querySelectorAll('a[href*="Delete"]');
-            deleteLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    const userName = this.closest('tr').querySelector('td:nth-child(2)').textContent;
-                    if (!confirm(`Are you sure you want to delete user "${userName}"? This action cannot be undone.`)) {
-                        e.preventDefault();
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>

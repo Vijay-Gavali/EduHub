@@ -7,12 +7,11 @@
 <head>
     <title>All Students - EduHub Admin</title>
     <link rel="stylesheet" type="text/css" href="css/AdminViewStudent.css">
-        <style><%@include file="css/AdminViewStudent.css"%></style>
+    <style><%@include file="css/AdminViewStudent.css"%></style>
     
 </head>
 <body>
-    <jsp:include page="./AdminDashboard.jsp"></jsp:include>
-    
+<jsp:include page="./AdminDashboard.jsp"></jsp:include>
 <div class="table-container">
         <h2>All Students</h2>
 
@@ -40,7 +39,7 @@
                 <td><%=user.get("email")%></td>
                 <td><%=user.get("contact_no")%></td>
                 <td><%=user.get("class_id")%></td>
-                <td><a href="AdminUpdateUserController?userId=<%=userId%>">Update</a></td>
+                <td><a href="AdminUpdateStudentController?userId=<%=userId%>">Update</a></td>
                 <td><a href="AdminDeleteUserController?userId=<%=user.get("user_id")%>" 
                        onclick="return confirm('Are you sure?');">Delete</a></td>
             </tr>

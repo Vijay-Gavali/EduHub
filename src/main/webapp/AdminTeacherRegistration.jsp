@@ -13,7 +13,7 @@
     <form action="AdminTeacherRegistration" method="post">
         <label>Teacher Name:</label> <input type="text" name="name" required /><br />
         <label>Teacher Email:</label> <input type="email" name="email" required /><br />
-        <label>Password:</label> <input type="password" name="password" required /><br />
+        <label>Password:</label> <input type="text" name="password" required /><br />
         <label>Contact Number:</label> <input type="text" name="contact_no" required /><br />
 
         <label>Assign Class To Teacher:</label> 

@@ -17,7 +17,7 @@ public class AdminPayFeesController extends HttpServlet {
             throws ServletException, IOException {
 
         String feesId = request.getParameter("feesId");
-        String studentId = request.getParameter("studentId");
+        String studentId = request.getParameter("studentId");  // CHANGED FROM user_id TO studentId
         String payAmountStr = request.getParameter("payAmount");
         String message = "";
 

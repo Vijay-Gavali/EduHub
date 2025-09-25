@@ -11,6 +11,15 @@
 	</welcome-file-list>
 
 	<servlet>
+		<servlet-name>AdminUpdateStudentController</servlet-name>
+		<servlet-class>com.controller.AdminUpdateStudentController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminUpdateStudentController</servlet-name>
+		<url-pattern>/AdminUpdateStudentController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
 		<servlet-name>AdminTeacherRegistration</servlet-name>
 		<servlet-class>com.controller.AdminTeacherRegistration</servlet-class>
 	</servlet>
@@ -29,12 +38,12 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>AdminUpdateUserController</servlet-name>
-		<servlet-class>com.controller.AdminUpdateUserController</servlet-class>
+		<servlet-name>AdminUpdateTeacherController</servlet-name>
+		<servlet-class>com.controller.AdminUpdateTeacherController</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>AdminUpdateUserController</servlet-name>
-		<url-pattern>/AdminUpdateUserController</url-pattern>
+		<servlet-name>AdminUpdateTeacherController</servlet-name>
+		<url-pattern>/AdminUpdateTeacherController</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
@@ -146,4 +155,16 @@
 		<servlet-name>AdminStudentViewController</servlet-name>
 		<url-pattern>/AdminStudentViewController</url-pattern>
 	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ParentRegistration</servlet-name>
+		<servlet-class>com.controller.ParentRegistration</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ParentRegistration</servlet-name>
+		<url-pattern>/ParentRegistration</url-pattern>
+	</servlet-mapping>
+
+
 </web-app>

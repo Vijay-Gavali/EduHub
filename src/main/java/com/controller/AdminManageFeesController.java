@@ -26,10 +26,10 @@ public class AdminManageFeesController extends HttpServlet {
         try (Connection con = DBConnection.getConnection()) {
 
             // Step 1: Check fees table
-            String checkFees = "SELECT f.fees_id, f.student_id, u.name AS student_name, " +
+            String checkFees = "SELECT f.fees_id, f.user_id, u.name AS student_name, " +
                                "f.amount, f.paid_amount, f.remaining_amount, f.payment_status, f.payment_date " +
-                               "FROM fees f JOIN users u ON f.student_id = u.user_id " +
-                               "WHERE f.student_id = ?";
+                               "FROM fees f JOIN users u ON f.user_id = u.user_id " +
+                               "WHERE f.user_id = ?";
             try (PreparedStatement ps = con.prepareStatement(checkFees)) {
                 ps.setInt(1, Integer.parseInt(studentId));
                 ResultSet rs = ps.executeQuery();
@@ -37,7 +37,7 @@ public class AdminManageFeesController extends HttpServlet {
                 if (rs.next()) {
                     Map<String, String> fee = new HashMap<>();
                     fee.put("fees_id", String.valueOf(rs.getInt("fees_id")));
-                    fee.put("student_id", String.valueOf(rs.getInt("student_id")));
+                    fee.put("user_id", String.valueOf(rs.getInt("user_id")));
                     fee.put("student_name", rs.getString("student_name"));
                     fee.put("amount", String.format("%.2f", rs.getBigDecimal("amount")));
                     fee.put("paid_amount", String.format("%.2f", rs.getBigDecimal("paid_amount")));
@@ -61,7 +61,7 @@ public class AdminManageFeesController extends HttpServlet {
                             double totalFees = rs2.getDouble("fees");
 
                             // Insert into fees table
-                            String insertFees = "INSERT INTO fees (student_id, amount, paid_amount, remaining_amount, payment_status) " +
+                            String insertFees = "INSERT INTO fees (user_id, amount, paid_amount, remaining_amount, payment_status) " +
                                                 "VALUES (?, ?, 0, ?, 'Pending')";
                             try (PreparedStatement ps3 = con.prepareStatement(insertFees, Statement.RETURN_GENERATED_KEYS)) {
                                 ps3.setInt(1, uid);
@@ -77,7 +77,7 @@ public class AdminManageFeesController extends HttpServlet {
 
                                 Map<String, String> fee = new HashMap<>();
                                 fee.put("fees_id", String.valueOf(feesId));
-                                fee.put("student_id", String.valueOf(uid));
+                                fee.put("user_id", String.valueOf(uid));
                                 fee.put("student_name", name);
                                 fee.put("amount", String.format("%.2f", totalFees));
                                 fee.put("paid_amount", "0.00");

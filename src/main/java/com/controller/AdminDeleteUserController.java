@@ -28,6 +28,6 @@ public class AdminDeleteUserController extends HttpServlet {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		response.sendRedirect("AdminUserController");
+		response.sendRedirect("#");
 	}
 }

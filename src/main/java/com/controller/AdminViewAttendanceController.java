@@ -35,7 +35,7 @@ public class AdminViewAttendanceController extends HttpServlet {
             }
 
             // ✅ Get attendance records
-            String sql = "SELECT date, status FROM attendance WHERE student_id = ? ORDER BY date DESC";
+            String sql = "SELECT date, status FROM attendance WHERE user_id = ? ORDER BY date DESC";
             try (PreparedStatement ps = con.prepareStatement(sql)) {
                 ps.setInt(1, studentId);
                 try (ResultSet rs = ps.executeQuery()) {
