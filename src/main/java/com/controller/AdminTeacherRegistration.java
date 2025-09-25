@@ -19,6 +19,7 @@ public class AdminTeacherRegistration extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         try {
+        	final String ROLE_TEACHER = "Teacher";
             String name = request.getParameter("name");
             String email = request.getParameter("email");
             String password = request.getParameter("password");
@@ -40,7 +41,7 @@ public class AdminTeacherRegistration extends HttpServlet {
             ps.setString(2, email);
             ps.setString(3, password);
             ps.setString(4, contact_no);
-            ps.setString(5, "Teacher");
+            ps.setString(5, ROLE_TEACHER);
             ps.setInt(6, Integer.parseInt(class_id));
 
             int rowsAffected = ps.executeUpdate();
