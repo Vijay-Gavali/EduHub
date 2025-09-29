@@ -18,7 +18,7 @@
 		<servlet-name>AdminUpdateStudentController</servlet-name>
 		<url-pattern>/AdminUpdateStudentController</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>AdminTeacherRegistration</servlet-name>
 		<servlet-class>com.controller.AdminTeacherRegistration</servlet-class>

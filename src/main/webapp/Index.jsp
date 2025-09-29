@@ -22,7 +22,7 @@
     <!-- Brand Logo with Text -->
     <a class="navbar-brand d-flex align-items-center" href="Index.jsp">
       <img src="media/ed hub logo.png" alt="Edu Hub Logo" width="60" height="60" class="d-inline-block me-2">
-      Edu Hub
+      EduHub
     </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
@@ -220,6 +220,7 @@
           <li><a href="about.jsp" class="text-decoration-none footer-textcolor">About</a></li>
           <li><a href="index.jsp#admission" class="text-decoration-none footer-textcolor">Admissions</a></li>
           <li><a href="contact.jsp" class="text-decoration-none footer-textcolor">Contact</a></li>
+          
         </ul>
       </div>
       <div class="col-md-4 text-center">
@@ -230,7 +231,7 @@
       </div>
     </div>
     <hr>
-    <p class="text-center mb-0">&copy; 2025 Edu Hub. All Rights Reserved.</p>
+    <p class="text-center mb-0">&copy; 2025 EduHub. All Rights Reserved.</p>
   </div>
 </footer>
 
