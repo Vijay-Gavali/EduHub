@@ -19,17 +19,17 @@ body {
 }
 
 .bg-color {
-	background-color: #ffc60b; /* for containers and cards */
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 	color: #333333;
 }
 
 /* index css start */
 .nav-bg {
-	background-color: #ffc60bf5;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .navbar .nav-link {
-	color: rgb(29, 4, 248); /* your desired color */
+	color: white;
 	transition: color 0.3s; /* smooth hover effect */
 }
 
@@ -48,7 +48,7 @@ body {
 }
 /* Stats */
 .stats {
-	background: #ffc60bf5;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 	padding: 40px 0;
 }
 
