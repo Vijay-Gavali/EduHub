@@ -1,70 +1,121 @@
-/* General Styles */
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f6f8;
-    margin: 0;
-    padding: 0;
+    display: flex;
+    min-height: 100vh;
     color: #333;
 }
 
 /* Navbar */
 .navbar {
-    background-color: #ffc60b; /* gold theme */
-    color: rgb(29, 4, 248);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    padding: 0 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
 }
 
-.navbar .brand {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: rgb(29, 4, 248);
-}
-
-.navbar .welcome {
-    font-size: 1.1em;
-    font-weight: 500;
-}
-
-/* Main Container */
-main {
-    width: 90%;
-    max-width: 1000px;
-    margin: 30px auto;
-}
-
-/* Menu Buttons */
-.menu {
+.logo-container {
     display: flex;
-    justify-content: center;
+    align-items: center;
     gap: 15px;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
 }
 
-/* Unified Button Style for Menu and Logout */
-button, .logout a {
-    background-color: rgb(29, 4, 248); /* deep blue */
+.logo-container img {
+    height: 60px;
+    width: auto;
+    border-radius: 6px;
+}
+
+.brand-name {
     color: white;
-    border: none;
-    padding: 12px 25px;
-    font-size: 1em;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none; /* for links */
-    display: inline-block;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
-button:hover, .logout a:hover {
-    background-color: #1621a5; /* darker blue */
-    transform: translateY(-2px);
+.logout a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 4px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
+    font-size: 16px;
 }
 
-/* Card Style */
+.logout a:hover {
+    background: rgba(255,255,255,0.3);
+    transform: translateY(-1px);
+}
+
+/* Side Dashboard Menu */
+.dashboard-menu {
+    position: fixed;
+    left: 0;
+    top: 80px;
+    width: 250px;
+    height: calc(100vh - 80px);
+    background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+    padding: 20px 0;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    overflow-y: auto;
+}
+
+.dashboard-menu ul {
+    list-style: none;
+    width: 100%;
+}
+
+.dashboard-menu li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.dashboard-menu li:last-child {
+    border-bottom: none;
+}
+
+.dashboard-menu a {
+    display: block;
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 15px 25px;
+    font-size: 16px;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.dashboard-menu a:hover {
+    background: rgba(255,255,255,0.1);
+    border-left: 4px solid #3498db;
+    padding-left: 30px;
+}
+
+/* Content Area */
+.content-area {
+    margin-left: 250px;
+    padding: 90px 30px 30px 30px;
+    width: calc(100% - 250px);
+    min-height: calc(100vh - 80px);
+}
+
+/* Cards (User info, tables, etc.) */
 .card {
     background-color: white;
     padding: 20px 25px;
@@ -74,21 +125,13 @@ button:hover, .logout a:hover {
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* Card Headings */
 .card h3 {
     margin-top: 0;
     margin-bottom: 15px;
-    color: rgb(29, 4, 248);
+    color: #3498db;
 }
 
-/* Extra children display */
-.extra-children {
-    margin-top: 10px;
-    font-style: italic;
-    color: #555;
-}
-
-/* Tables (Attendance & Fees) */
+/* Tables inside cards */
 .card table {
     width: 100%;
     border-collapse: collapse;
@@ -103,8 +146,8 @@ button:hover, .logout a:hover {
 }
 
 .card table th {
-    background-color: #ffc60b; /* gold */
-    color: rgb(29, 4, 248); /* blue text */
+    background-color: #3498db;
+    color: #fff;
     font-weight: bold;
 }
 
@@ -116,21 +159,106 @@ button:hover, .logout a:hover {
     background-color: #f1f1f1;
 }
 
-/* Logout Container */
-.logout {
-    text-align: center;
-    margin-top: 20px;
+/* Buttons (Menu, Logout) */
+button, .logout a {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+}
+
+button:hover, .logout a:hover {
+    background-color: #1d6fb8;
+    transform: translateY(-2px);
+}
+
+/* Extra content styling */
+.extra-children {
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+}
+
+/* Scrollbar Styling for Menu */
+.dashboard-menu::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dashboard-menu::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.1);
+}
+
+.dashboard-menu::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.3);
+    border-radius: 3px;
+}
+
+.dashboard-menu::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,255,255,0.5);
 }
 
 /* Responsive */
-@media screen and (max-width: 600px) {
-    .menu {
-        flex-direction: column;
-        align-items: center;
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 15px;
+        height: 70px;
     }
 
-    .menu button {
-        width: 85%;
-        margin-bottom: 10px;
+    .brand-name {
+        font-size: 22px;
+    }
+
+    .logo-container img {
+        height: 50px;
+    }
+
+    .dashboard-menu {
+        width: 200px;
+        top: 70px;
+        height: calc(100vh - 70px);
+    }
+
+    .content-area {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+        padding: 80px 20px 20px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        height: 60px;
+        padding: 0 10px;
+    }
+
+    .brand-name {
+        font-size: 18px;
+    }
+
+    .logo-container img {
+        height: 40px;
+    }
+
+    .dashboard-menu {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+    }
+
+    .content-area {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+    
+    body {
+        flex-direction: column;
     }
 }

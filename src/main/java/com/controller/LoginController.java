@@ -64,7 +64,7 @@ public class LoginController extends HttpServlet {
                                         session.setAttribute("admission_no", rsChildAll.getString("admission_no"));
                                         session.setAttribute("admission_date", rsChildAll.getString("admission_date"));
                                         session.setAttribute("grade", rsChildAll.getString("grade"));
-                                        session.setAttribute("user_id", rsChildAll.getInt("user_id")); // ✅ updated
+                                        session.setAttribute("user_id", rsChildAll.getInt("user_id"));
                                         first = false;
                                     } else {
                                         sj.add(childName);
@@ -91,7 +91,8 @@ public class LoginController extends HttpServlet {
                             }
                         }
 
-                        response.sendRedirect("UserDashboard.jsp");
+                        // ✅ Redirect all logins to Index.jsp
+                        response.sendRedirect("Index.jsp");
                         return;
                     }
                 }
@@ -111,7 +112,7 @@ public class LoginController extends HttpServlet {
                         String role = rsUser.getString("role");
                         String userName = rsUser.getString("name");
 
-                        session.setAttribute("user_id", rsUser.getInt("user_id")); // ✅ updated for users table
+                        session.setAttribute("user_id", rsUser.getInt("user_id"));
                         session.setAttribute("name", userName);
                         session.setAttribute("role", role);
                         session.setAttribute("admission_no", rsUser.getString("admission_no"));
@@ -129,14 +130,8 @@ public class LoginController extends HttpServlet {
                             session.removeAttribute("childrenHtml");
                         }
 
-                        // Redirect by role
-                        if ("Admin".equalsIgnoreCase(role)) {
-                            response.sendRedirect("AdminDashboard.jsp");
-                        } else if ("Teacher".equalsIgnoreCase(role)) {
-                            response.sendRedirect("TeacherDashboard.jsp");
-                        } else {
-                            response.sendRedirect("UserDashboard.jsp");
-                        }
+                        // ✅ Redirect all logins to Index.jsp
+                        response.sendRedirect("Index.jsp");
                         return;
                     }
                 }

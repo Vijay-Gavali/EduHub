@@ -11,12 +11,16 @@
 	<link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 	<link rel="stylesheet" href="css/Index.css">	
-	<style><%@include file="css/Index.css"%></style></head>
-	
+	<style><%@include file="css/Index.css"%></style>
   </head>
   <body>
 
-   <!-- ✅ Navbar -->
+<%
+    String role = (String) session.getAttribute("role");
+    String name = (String) session.getAttribute("name");
+%>
+
+<!-- ✅ Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark nav-bg fixed-top ms-1 me-1">
   <div class="container">
     <!-- Brand Logo with Text -->
@@ -33,16 +37,38 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto nav-textcolor">
-       <li class="nav-item"><a class="nav-link" href="Index.jsp">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="Index.jsp">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="About.jsp">About</a></li>
         <li class="nav-item"><a class="nav-link active" href="StudentLife.jsp">Student Life</a></li>
         <li class="nav-item"><a class="nav-link" href="Gallery.jsp">Gallery</a></li>
         <li class="nav-item"><a class="nav-link" href="Achievements.jsp">Achievements</a></li>
         <li class="nav-item"><a class="nav-link" href="Contact.jsp">Contact</a></li>
+
+        <% if (role == null) { %>
+            <!-- If NOT logged in -->
+            <li class="nav-item">
+                <a class="nav-link btn btn-outline-light ms-2 px-3 py-1 rounded" href="login.jsp">Login</a>
+            </li>
+        <% } else { %>
+            <!-- If logged in -->
+            <li class="nav-item">
+                <% if ("Admin".equalsIgnoreCase(role)) { %>
+                    <a class="nav-link btn btn-outline-warning ms-2 px-3 py-1 rounded" href="AdminDashboard.jsp">Dashboard</a>
+                <% } else if ("Teacher".equalsIgnoreCase(role)) { %>
+                    <a class="nav-link btn btn-outline-info ms-2 px-3 py-1 rounded" href="TeacherDashboard.jsp">Dashboard</a>
+                <% } else { %>
+                    <a class="nav-link btn btn-outline-success ms-2 px-3 py-1 rounded" href="UserDashboard.jsp">Dashboard</a>
+                <% } %>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn btn-danger ms-2 px-3 py-1 rounded" href="logout.jsp">Logout</a>
+            </li>
+        <% } %>
       </ul>
     </div>
   </div>
 </nav>
+
 
 <!-- ✅ Banner -->
 <div class="banner" style="background-image: url('media/school.jpg'); background-size: cover; background-position: center; height: 400px; display: flex; align-items: center; justify-content: center; color: white;">
