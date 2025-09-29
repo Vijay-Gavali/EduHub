@@ -9,7 +9,8 @@
     <title>User Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/userdashboard.css" type="text/css">
+    <link rel="stylesheet" href="css/AdminDashboard.css" type="text/css">
+<style><%@include file="css/userdashboard.css"%></style>
 </head>
 <body>
 <%
@@ -27,31 +28,55 @@
     }
 %>
 
-<!-- Common Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark nav-bg fixed-top">
-    <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center" href="Index.jsp">
-            <img src="./media/ed hub logo.png" alt="Edu Hub Logo" width="60" height="60" class="d-inline-block me-2">
-            EduHub
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="index.jsp">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.jsp">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.jsp">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="logout.jsp">Logout</a></li>
-            </ul>
-        </div>
+<!-- Navbar matching Index.jsp -->
+<nav class="navbar navbar-expand-lg navbar-dark nav-bg fixed-top ms-1 me-1">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="Index.jsp">
+      <img src="media/ed hub logo.png" alt="Edu Hub Logo" width="60" height="60" class="d-inline-block me-2">
+      Edu Hub
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto nav-textcolor">
+        <li class="nav-item"><a class="nav-link" href="Index.jsp">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="About.jsp">About</a></li>
+        <li class="nav-item"><a class="nav-link active" href="StudentLife.jsp">Student Life</a></li>
+        <li class="nav-item"><a class="nav-link" href="Gallery.jsp">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="Achievements.jsp">Achievements</a></li>
+        <li class="nav-item"><a class="nav-link" href="Contact.jsp">Contact</a></li>
+
+        <% if (role != null) { %>
+            <li class="nav-item">
+                <% if ("Admin".equalsIgnoreCase(role)) { %>
+                    <a class="nav-link btn btn-outline-warning ms-2 px-3 py-1 rounded" href="AdminDashboard.jsp">Dashboard</a>
+                <% } else if ("Teacher".equalsIgnoreCase(role)) { %>
+                    <a class="nav-link btn btn-outline-info ms-2 px-3 py-1 rounded" href="TeacherDashboard.jsp">Dashboard</a>
+                <% } else { %>
+                    <a class="nav-link btn btn-outline-success ms-2 px-3 py-1 rounded" href="UserDashboard.jsp">Dashboard</a>
+                <% } %>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn btn-danger ms-2 px-3 py-1 rounded" href="logout.jsp">Logout</a>
+            </li>
+        <% } else { %>
+            <li class="nav-item">
+                <a class="nav-link btn btn-outline-light ms-2 px-3 py-1 rounded" href="login.jsp">Login</a>
+            </li>
+        <% } %>
+      </ul>
     </div>
+  </div>
 </nav>
 
 <!-- Content -->
 <div class="container-fluid" style="margin-top: 90px;">
     <div class="row">
-        
         <!-- Sidebar -->
         <div class="col-md-3 col-lg-2 bg-light p-3 border-end sidebar">
             <h5 class="text-center mb-3">Dashboard Menu</h5>
