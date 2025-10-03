@@ -1,198 +1,186 @@
-/* General Styles */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 20px;
-    min-height: 100vh;
-}
-
-/* Container */
+/* Admin View Classes Specific Styles */
 .container {
-    width: 1000px;
-    margin-top: 70px;
-    margin-left:280px;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-    padding: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Heading */
-h2 {
-    text-align: center;
-    color: #2d3748;
-    font-size: 26px;
-    margin-bottom: 0px;
+.container h2 {
+    color: #2c3e50;
+    font-size: 28px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ecf0f1;
     font-weight: 600;
-    position: relative;
-    padding-bottom: 12px;
-}
-
-h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
-    border-radius: 2px;
 }
 
 /* Table Styles */
 .table-wrapper {
     overflow-x: auto;
     border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 0;
-    font-size: 13px;
-    min-width: 500px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-th {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+thead th {
     color: white;
-    font-weight: 600;
-    padding: 12px 10px;
+    padding: 16px 20px;
     text-align: left;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
 }
 
-th:first-child {
+thead th:first-child {
     border-top-left-radius: 8px;
 }
 
-th:last-child {
+thead th:last-child {
     border-top-right-radius: 8px;
 }
 
-td {
-    padding: 10px 8px;
-    border-bottom: 1px solid #e2e8f0;
-    color: #4a5568;
-    font-size: 13px;
+tbody tr {
+    border-bottom: 1px solid #ecf0f1;
+    transition: all 0.3s ease;
 }
 
-tr:nth-child(even) {
-    background-color: #f8fafc;
+tbody tr:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-tr:hover {
-    background-color: #f1f5f9;
-    transition: background-color 0.2s ease;
+tbody td {
+    padding: 15px 20px;
+    color: #2c3e50;
+    font-size: 15px;
+    border: none;
 }
 
-a {
+/* Action Links */
+td a {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 0 5px;
     text-decoration: none;
-    padding: 5px 10px;
     border-radius: 4px;
     font-weight: 500;
-    transition: all 0.2s ease;
-    display: inline-block;
-    text-align: center;
-    min-width: 60px;
-    font-size: 12px;
-    margin: 2px;
-}
-
-a[href*="Update"] {
-    background: linear-gradient(135deg, #48bb78, #38a169);
-    color: white;
-}
-
-a[href*="Update"]:hover {
-    background: linear-gradient(135deg, #38a169, #2f855a);
-    transform: translateY(-1px);
-}
-
-a[href*="Delete"] {
-    background: linear-gradient(135deg, #f56565, #e53e3e);
-    color: white;
-}
-
-a[href*="Delete"]:hover {
-    background: linear-gradient(135deg, #e53e3e, #c53030);
-    transform: translateY(-1px);
-}
-
-/* No Data Message */
-td[colspan] {
-    text-align: center;
-    color: #718096;
-    font-style: italic;
-    padding: 30px;
-    background-color: #f7fafc;
     font-size: 14px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
 }
 
-/* Action column specific styling */
-td:last-child {
+/* Update Button */
+td a:first-child {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+}
+
+td a:first-child:hover {
+    background: linear-gradient(135deg, #2980b9 0%, #21618c 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+/* Delete Button */
+td a:last-child {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+}
+
+td a:last-child:hover {
+    background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+}
+
+/* No Classes Found Message */
+td[colspan="5"] {
     text-align: center;
-    white-space: nowrap;
+    color: #7f8c8d;
+    font-style: italic;
+    padding: 40px 20px;
+    font-size: 16px;
 }
 
-/* Responsive Design */
+/* Fees Column Styling */
+td:nth-child(3) {
+    font-weight: 600;
+    color: #27ae60;
+}
+
+/* Responsive Design for Classes Table */
 @media (max-width: 768px) {
     .container {
-        margin: 15px;
-        padding: 15px;
+        padding: 20px;
     }
     
-    h2 {
-        font-size: 22px;
-        margin-bottom: 15px;
+    .container h2 {
+        font-size: 24px;
+        text-align: center;
     }
     
-    th, td {
-        padding: 10px 6px;
-        font-size: 12px;
+    thead th {
+        padding: 12px 15px;
+        font-size: 14px;
     }
     
-    a {
-        padding: 4px 8px;
-        font-size: 11px;
-        min-width: 50px;
-        margin: 1px;
+    tbody td {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+    
+    td a {
+        padding: 6px 12px;
+        font-size: 13px;
+        margin: 2px;
+        display: block;
+        text-align: center;
     }
 }
 
 @media (max-width: 480px) {
-    body {
-        padding: 10px;
-    }
-    
     .container {
-        margin: 5px;
-        padding: 10px;
+        padding: 15px;
     }
     
-    h2 {
-        font-size: 18px;
+    .container h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
     }
     
-    th, td {
-        padding: 8px 4px;
-        font-size: 11px;
+    thead th {
+        padding: 10px 8px;
+        font-size: 12px;
     }
     
-    table {
-        min-width: 400px;
+    tbody td {
+        padding: 10px 8px;
+        font-size: 12px;
     }
 }
 
-/* Animation */
+/* Animation for table rows */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(15px);
+        transform: translateY(10px);
     }
     to {
         opacity: 1;
@@ -200,54 +188,14 @@ td:last-child {
     }
 }
 
-.table-wrapper {
-    animation: fadeIn 0.4s ease-out;
+tbody tr {
+    animation: fadeIn 0.3s ease-out;
 }
 
-/* Compact button container */
-.button-container {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 15px;
-    gap: 10px;
+tbody tr:nth-child(even) {
+    background-color: #fafafa;
 }
 
-.add-button {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 13px;
-    transition: all 0.2s ease;
-}
-
-.add-button:hover {
-    transform: translateY(-1px);
-}
-
-/* Make table columns more compact */
-th:nth-child(1), td:nth-child(1) { /* Class ID */
-    width: 80px;
-    text-align: center;
-}
-
-th:nth-child(2), td:nth-child(2) { /* Class Name */
-    width: 120px;
-}
-
-th:nth-child(3), td:nth-child(3) { /* Fees */
-    width: 100px;
-    text-align: right;
-}
-
-th:nth-child(4), td:nth-child(4) { /* Class Teacher */
-    width: 100px;
-    text-align: center;
-}
-
-th:nth-child(5), td:nth-child(5) { /* Actions */
-    width: 150px;
-    text-align: center;
+tbody tr:nth-child(even):hover {
+    background-color: #f1f1f1;
 }

@@ -32,7 +32,6 @@ public class AdminViewClassesController extends HttpServlet {
 				Classes cls = new Classes();
 				cls.setClassId(resultSet.getInt("class_id"));
 				cls.setClassName(resultSet.getString("class_name"));
-				cls.setTeacherId(resultSet.getInt("user_id"));
 				cls.setFees(resultSet.getInt("fees"));
 
 				classList.add(cls);

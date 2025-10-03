@@ -9,7 +9,7 @@
     <title>User Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/AdminDashboard.css" type="text/css">
+    <link rel="stylesheet" href="css/userdashboard.css" type="text/css">
 <style><%@include file="css/userdashboard.css"%></style>
 </head>
 <body>

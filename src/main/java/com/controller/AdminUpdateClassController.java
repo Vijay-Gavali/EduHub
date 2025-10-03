@@ -34,7 +34,6 @@ public class AdminUpdateClassController extends HttpServlet {
 				Map<String, Object> cls = new HashMap<>();
 				cls.put("classId", rs.getInt("class_id"));
 				cls.put("className", rs.getString("class_name"));
-				cls.put("teacherId", rs.getInt("user_id"));
 				cls.put("fees", rs.getInt("fees"));
 
 				request.setAttribute("class", cls);
@@ -55,18 +54,16 @@ public class AdminUpdateClassController extends HttpServlet {
 
 		String classId = request.getParameter("classId");
 		String className = request.getParameter("className");
-		String teacherId = request.getParameter("teacherId");
 		String fees = request.getParameter("fees");
 
 		try {
 			Connection con = DBConnection.getConnection();
 			PreparedStatement ps = con
-					.prepareStatement("UPDATE class SET class_name = ?, user_id = ?, fees = ? WHERE class_id = ?");
+					.prepareStatement("UPDATE class SET class_name = ?, fees = ? WHERE class_id = ?");
 
 			ps.setString(1, className);
-			ps.setInt(2, Integer.parseInt(teacherId));
-			ps.setInt(3, Integer.parseInt(fees));
-			ps.setInt(4, Integer.parseInt(classId));
+			ps.setInt(2, Integer.parseInt(fees));
+			ps.setInt(3, Integer.parseInt(classId));
 
 			ps.executeUpdate();
 			con.close();

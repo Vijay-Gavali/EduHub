@@ -12,7 +12,7 @@ public class DBConnection {
 		try {
 
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/eduhub", "root", "root");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/eduhub", "root", "root123");
 			System.out.println("Connection successfull !!\n");
 
 		} catch (Exception e) {
