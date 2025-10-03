@@ -43,7 +43,7 @@ table {
 
 /* Table Header */
 thead {
-    background-color: #4CAF50;
+	background: #3498db;
     color: white;
 }
 
