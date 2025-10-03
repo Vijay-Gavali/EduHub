@@ -10,6 +10,8 @@
 <meta charset="UTF-8">
 <title>Admin Classes</title>
 <link rel="stylesheet" href="css/AdminViewClasses.css" type="text/css">
+<style><%@include file="css/AdminViewClasses.css"%></style></head>
+
 </head>
 <body>
 <jsp:include page="./AdminDashboard.jsp"></jsp:include>

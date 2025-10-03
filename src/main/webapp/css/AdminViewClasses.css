@@ -1,168 +1,156 @@
-/* Admin View Classes Specific Styles */
+/* AdminViewClasses.css */
+
+/* Content Area Styling */
+.content-area {
+    margin-left: 250px; /* Adjust based on your sidebar width */
+    padding: 20px;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 30px;
     background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
 }
 
-.container h2 {
-    color: #2c3e50;
-    font-size: 28px;
+/* Header Styling */
+h2 {
+    color: #333;
     margin-bottom: 25px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid #ecf0f1;
+    font-size: 28px;
     font-weight: 600;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
 }
 
-/* Table Styles */
+/* Table Wrapper */
 .table-wrapper {
     overflow-x: auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
 }
 
+/* Table Styling */
 table {
     width: 100%;
     border-collapse: collapse;
     background: white;
-    border-radius: 8px;
-    overflow: hidden;
 }
 
+/* Table Header */
 thead {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-color: #4CAF50;
+    color: white;
 }
 
 thead th {
-    color: white;
-    padding: 16px 20px;
+    padding: 15px 12px;
     text-align: left;
     font-weight: 600;
-    font-size: 16px;
-    border: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-thead th:first-child {
-    border-top-left-radius: 8px;
-}
-
-thead th:last-child {
-    border-top-right-radius: 8px;
-}
-
+/* Table Body */
 tbody tr {
-    border-bottom: 1px solid #ecf0f1;
-    transition: all 0.3s ease;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s ease;
 }
 
 tbody tr:hover {
     background-color: #f8f9fa;
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-tbody td {
-    padding: 15px 20px;
-    color: #2c3e50;
-    font-size: 15px;
-    border: none;
+tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+tbody tr:nth-child(even):hover {
+    background-color: #f1f1f1;
+}
+
+/* Table Cells */
+td {
+    padding: 15px 12px;
+    color: #555;
+    font-size: 14px;
 }
 
 /* Action Links */
 td a {
     display: inline-block;
-    padding: 8px 16px;
-    margin: 0 5px;
+    padding: 6px 12px;
+    margin: 0 4px;
     text-decoration: none;
     border-radius: 4px;
+    font-size: 13px;
     font-weight: 500;
-    font-size: 14px;
     transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
+    border: 1px solid transparent;
 }
 
-/* Update Button */
+/* Update Link */
 td a:first-child {
-    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    background-color: #2196F3;
     color: white;
+    border: 1px solid #2196F3;
 }
 
 td a:first-child:hover {
-    background: linear-gradient(135deg, #2980b9 0%, #21618c 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+    background-color: #1976D2;
+    border-color: #1976D2;
+    transform: translateY(-1px);
 }
 
-/* Delete Button */
+/* Delete Link */
 td a:last-child {
-    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    background-color: #f44336;
     color: white;
+    border: 1px solid #f44336;
 }
 
 td a:last-child:hover {
-    background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+    background-color: #d32f2f;
+    border-color: #d32f2f;
+    transform: translateY(-1px);
 }
 
-/* No Classes Found Message */
-td[colspan="5"] {
+/* No Data Message */
+td[colspan="4"] {
     text-align: center;
-    color: #7f8c8d;
+    color: #666;
     font-style: italic;
-    padding: 40px 20px;
-    font-size: 16px;
+    padding: 30px;
+    background-color: #fafafa;
 }
 
-/* Fees Column Styling */
-td:nth-child(3) {
-    font-weight: 600;
-    color: #27ae60;
-}
-
-/* Responsive Design for Classes Table */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .container {
-        padding: 20px;
-    }
-    
-    .container h2 {
-        font-size: 24px;
-        text-align: center;
-    }
-    
-    thead th {
-        padding: 12px 15px;
-        font-size: 14px;
-    }
-    
-    tbody td {
-        padding: 12px 15px;
-        font-size: 14px;
-    }
-    
-    td a {
-        padding: 6px 12px;
-        font-size: 13px;
-        margin: 2px;
-        display: block;
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
+    .content-area {
+        margin-left: 0;
         padding: 15px;
     }
     
-    .container h2 {
-        font-size: 20px;
-        margin-bottom: 20px;
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    h2 {
+        font-size: 24px;
+    }
+    
+    .table-wrapper {
+        border: none;
+    }
+    
+    table {
+        font-size: 12px;
     }
     
     thead th {
@@ -170,9 +158,14 @@ td:nth-child(3) {
         font-size: 12px;
     }
     
-    tbody td {
+    td {
         padding: 10px 8px;
-        font-size: 12px;
+    }
+    
+    td a {
+        padding: 4px 8px;
+        font-size: 11px;
+        margin: 0 2px;
     }
 }
 
@@ -192,10 +185,34 @@ tbody tr {
     animation: fadeIn 0.3s ease-out;
 }
 
-tbody tr:nth-child(even) {
-    background-color: #fafafa;
+/* Loading state */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
 }
 
-tbody tr:nth-child(even):hover {
-    background-color: #f1f1f1;
+/* Success message styling */
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border: 1px solid #c3e6cb;
+}
+
+/* Error message styling */
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border: 1px solid #f5c6cb;
+}
+
+/* Currency symbol styling */
+td:contains("₹") {
+    font-weight: 600;
+    color: #2e7d32;
 }
