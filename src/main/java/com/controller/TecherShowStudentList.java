@@ -13,16 +13,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+
 @WebServlet("/TeacherStudentList")
 public class TecherShowStudentList extends HttpServlet {
 
-	 
 	
-	
-
-	 /**
-	 * 
-	 */
 	private static final long serialVersionUID = 6481180130138303161L;
 
 	 @Override
