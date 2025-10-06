@@ -33,11 +33,17 @@ public class TeacherAssignedClasses extends HttpServlet {
         List<Teacher> classList = new ArrayList<>();
 
         try (Connection conn = DBConnection.getConnection()) {
-            String sql = "SELECT c.class_id, c.class_name, COUNT(u.user_id) AS total_students " +
-                         "FROM class c " +
-                         "LEFT JOIN users u ON c.class_id = u.class_id AND u.role = 'Student' " +
-                         "WHERE c.user_id = ? " +
-                         "GROUP BY c.class_id, c.class_name";
+
+            // ✅ Correct query
+            String sql = """
+                SELECT c.class_id, c.class_name, COUNT(s.user_id) AS total_students
+                FROM class c
+                LEFT JOIN users s ON c.class_id = s.class_id AND s.role = 'Student'
+                WHERE c.class_id = (
+                    SELECT class_id FROM users WHERE user_id = ? AND role = 'Teacher'
+                )
+                GROUP BY c.class_id, c.class_name
+            """;
 
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setInt(1, teacherId);
@@ -53,7 +59,6 @@ public class TeacherAssignedClasses extends HttpServlet {
 
             request.setAttribute("classList", classList);
             request.getRequestDispatcher("TeacherAssignedClasses.jsp").forward(request, response);
-
 
         } catch (Exception e) {
             e.printStackTrace();

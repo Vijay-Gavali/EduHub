@@ -13,6 +13,20 @@ public class Teacher {
     private String admissionNo;
     private String grade;
 
+    // Attendance info
+    private String attendanceDate;
+    private String status;
+    private boolean attendanceMarkedToday;
+
+    public boolean isAttendanceMarkedToday() {
+        return attendanceMarkedToday;
+    }
+
+    public void setAttendanceMarkedToday(boolean attendanceMarkedToday) {
+        this.attendanceMarkedToday = attendanceMarkedToday;
+    }
+
+
     // ✅ Default constructor (needed for setters)
     public Teacher() {}
 
@@ -30,6 +44,21 @@ public class Teacher {
         this.admissionNo = admissionNo;
         this.grade = grade;
         this.className = className;
+    }
+
+    // Constructor for Attendance info
+    public Teacher(String studentName, String attendanceDate, String status) {
+        this.studentName = studentName;
+        this.attendanceDate = attendanceDate;
+        this.status = status;
+    }
+   
+
+    // Optional: ToString
+    @Override
+    public String toString() {
+        return "Teacher [studentId=" + studentId + ", studentName=" + studentName + 
+               ", className=" + className + ", attendanceMarkedToday=" + attendanceMarkedToday + "]";
     }
 
     // Getters & Setters for Class info
@@ -54,4 +83,11 @@ public class Teacher {
 
     public String getGrade() { return grade; }
     public void setGrade(String grade) { this.grade = grade; }
+
+    // Getters & Setters for Attendance info
+    public String getAttendanceDate() { return attendanceDate; }
+    public void setAttendanceDate(String attendanceDate) { this.attendanceDate = attendanceDate; }
+
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
 }
