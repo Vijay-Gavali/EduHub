@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+*-+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
     String role = (String) session.getAttribute("role");
 %>
@@ -15,51 +15,51 @@
   <body>
 
     <!-- ✅ Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark nav-bg fixed-top ms-1 me-1">
-      <div class="container">
-        <!-- Brand Logo with Text -->
-        <a class="navbar-brand d-flex align-items-center" href="Index.jsp">
-          <img src="media/ed hub logo.png" alt="Edu Hub Logo" width="60" height="60" class="d-inline-block me-2">
-          Edu Hub
-        </a>
+  <nav class="navbar navbar-expand-lg navbar-dark nav-bg fixed-top ms-1 me-1">
+  <div class="container">
+    <!-- Brand Logo with Text -->
+    <a class="navbar-brand d-flex align-items-center" href="Index.jsp">
+      <img src="media/ed hub logo.png" alt="Edu Hub Logo" width="60" height="60" class="d-inline-block me-2">
+      EduHub
+    </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
-                aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto nav-textcolor">
-            <li class="nav-item"><a class="nav-link" href="Index.jsp">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="About.jsp">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="StudentLife.jsp">Student Life</a></li>
-            <li class="nav-item"><a class="nav-link" href="Gallery.jsp">Gallery</a></li>
-            <li class="nav-item"><a class="nav-link active" href="Achievements.jsp">Achievements</a></li>
-            <li class="nav-item"><a class="nav-link" href="Contact.jsp">Contact</a></li>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto nav-textcolor">
+        <li class="nav-item"><a class="nav-link" href="Index.jsp">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="About.jsp">About</a></li>
+        <li class="nav-item"><a class="nav-link active" href="StudentLife.jsp">Student Life</a></li>
+        <li class="nav-item"><a class="nav-link" href="Gallery.jsp">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="Achievements.jsp">Achievements</a></li>
+        <li class="nav-item"><a class="nav-link" href="Contact.jsp">Contact</a></li>
 
-            <% if (role != null) { %>
-                <li class="nav-item">
-                    <% if ("Admin".equalsIgnoreCase(role)) { %>
-                        <a class="nav-link btn btn-outline-warning ms-2 px-3 py-1 rounded" href="AdminDashboard.jsp">Dashboard</a>
-                    <% } else if ("Teacher".equalsIgnoreCase(role)) { %>
-                        <a class="nav-link btn btn-outline-info ms-2 px-3 py-1 rounded" href="TeacherDashboard.jsp">Dashboard</a>
-                    <% } else { %>
-                        <a class="nav-link btn btn-outline-success ms-2 px-3 py-1 rounded" href="UserDashboard.jsp">Dashboard</a>
-                    <% } %>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-danger ms-2 px-3 py-1 rounded" href="logout.jsp">Logout</a>
-                </li>
-            <% } else { %>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-outline-light ms-2 px-3 py-1 rounded" href="login.jsp">Login</a>
-                </li>
-            <% } %>
-          </ul>
-        </div>
-      </div>
-    </nav>
+        <% if (role == null) { %>
+            <li class="nav-item">
+                <a class="nav-link nav-btn" href="login.jsp">Login</a>
+            </li>
+        <% } else { %>
+            <li class="nav-item">
+                <% if ("Admin".equalsIgnoreCase(role)) { %>
+                    <a class="nav-link nav-btn admin-btn" href="AdminDashboard.jsp">Dashboard</a>
+                <% } else if ("Teacher".equalsIgnoreCase(role)) { %>
+                    <a class="nav-link nav-btn teacher-btn" href="TeacherDashboard.jsp">Dashboard</a>
+                <% } else { %>
+                    <a class="nav-link nav-btn user-btn" href="UserDashboard.jsp">Dashboard</a>
+                <% } %>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav-btn logout-btn" href="logout.jsp">Logout</a>
+            </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>
 
     <!-- ✅ Page Header -->
     <div class="page-header" style="background-image: url('media/school.jpg'); margin-top:90px;">

@@ -5,13 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Edu Hub - Home</title>
-   <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    rel="stylesheet">
-	<link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-	<link rel="stylesheet" href="css/Index.css">	
-	<style><%@include file="css/Index.css"%></style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/Index.css">
   </head>
   <body>
 
@@ -46,20 +42,20 @@
 
         <% if (role == null) { %>
             <li class="nav-item">
-                <a class="nav-link btn btn-outline-light ms-2 px-3 py-1 rounded" href="login.jsp">Login</a>
+                <a class="nav-link nav-btn" href="login.jsp">Login</a>
             </li>
         <% } else { %>
             <li class="nav-item">
                 <% if ("Admin".equalsIgnoreCase(role)) { %>
-                    <a class="nav-link btn btn-outline-warning ms-2 px-3 py-1 rounded" href="AdminDashboard.jsp">Dashboard</a>
+                    <a class="nav-link nav-btn admin-btn" href="AdminDashboard.jsp">Dashboard</a>
                 <% } else if ("Teacher".equalsIgnoreCase(role)) { %>
-                    <a class="nav-link btn btn-outline-info ms-2 px-3 py-1 rounded" href="TeacherDashboard.jsp">Dashboard</a>
+                    <a class="nav-link nav-btn teacher-btn" href="TeacherDashboard.jsp">Dashboard</a>
                 <% } else { %>
-                    <a class="nav-link btn btn-outline-success ms-2 px-3 py-1 rounded" href="UserDashboard.jsp">Dashboard</a>
+                    <a class="nav-link nav-btn user-btn" href="UserDashboard.jsp">Dashboard</a>
                 <% } %>
             </li>
             <li class="nav-item">
-                <a class="nav-link btn btn-danger ms-2 px-3 py-1 rounded" href="logout.jsp">Logout</a>
+                <a class="nav-link nav-btn logout-btn" href="logout.jsp">Logout</a>
             </li>
         <% } %>
       </ul>
@@ -68,13 +64,12 @@
 </nav>
 
 <!-- ✅ Banner -->
-<div class="banner" style="background-image: url('media/school.jpg'); background-size: cover; background-position: center; height: 400px; display: flex; align-items: center; justify-content: center; color: white;">
+<div class="banner" style="background-image: url('media/school.jpg'); background-size: cover; background-position: center; height: 70vh; display: flex; align-items: center; justify-content: center; color: white; text-shadow: 2px 2px 5px rgba(0,0,0,0.7);">
   <div class="text-center">
     <h1>Welcome to Edu Hub</h1>
     <p class="lead">Shaping Future Leaders in Pune, India</p>
   </div>
 </div>
-
 
 <!-- ✅ Academics Overview -->
 <div class="container-fluid py-5 form-color">
@@ -119,12 +114,9 @@
 <!-- ✅ Teaching Methodology -->
 <div class="card w-100 border-0 rounded-0">
   <div class="row g-0 align-items-stretch form-color-h">
-    <!-- Left Image -->
     <div class="col-md-4 p-4">
       <img src="media/classroom.jpg" class="img-fluid h-100 w-100 object-fit-cover" alt="Our Teaching Methodology">
     </div>
-
-    <!-- Right Content -->
     <div class="col-md-8 d-flex">
       <div class="card-body d-flex flex-column justify-content-center ms-5 p-4 w-100">
         <h3 class="card-title mb-3 ms-3 text-dark">Our Teaching Methodology</h3>
@@ -140,82 +132,8 @@
   </div>
 </div>
 
-<!-- ✅ Admission Process -->
-<div class="container-fluid form-color-h" id="admission">
-  <div class="text-center mb-4 py-3">
-    <h2 class="text-danger">Admission Process</h2>
-    <p class="text-danger">Follow these simple steps to join Edu Hub and begin your academic journey.</p>
-  </div>
-  <div class="row g-4">
-    <div class="col-md-3">
-      <div class="process-step text-center form-color">
-        <h4 class="text-danger">Step 1</h4>
-        <p>Fill out the online application form with student and parent details.</p>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="process-step text-center form-color">
-        <h4 class="text-danger">Step 2</h4>
-        <p>Submit required documents (Birth Certificate, ID Proof, Previous Marksheet).</p>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="process-step text-center form-color">
-        <h4 class="text-danger">Step 3</h4>
-        <p>Attend an interaction session / entrance test (for higher grades).</p>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="process-step text-center form-color">
-        <h4 class="text-danger">Step 4</h4>
-        <p>Confirm admission by paying fees and collecting the admission kit.</p>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- ✅ Online Admission Form -->
-<div class="container-fluid form-color py-5">
-  <h2 class="text-center mb-4 text-success">Online Admission Form</h2>
-  <form class="row g-3">
-    <div class="col-md-6">
-      <label for="studentName" class="form-label">Student Name</label>
-      <input type="text" class="form-control" id="studentName" placeholder="ENTER YOUR FULL NAME" required>
-    </div>
-    <div class="col-md-6">
-      <label for="dob" class="form-label">Date of Birth</label>
-      <input type="date" class="form-control" id="dob" required>
-    </div>
-    <div class="col-md-6">
-      <label for="grade" class="form-label">Applying For Grade</label>
-      <select id="grade" class="form-select" required>
-        <option selected disabled>Choose...</option>
-        <option>1-5 (Elementary)</option>
-        <option>6-8 (Junior)</option>
-        <option>9-10 (High School)</option>
-      </select>
-    </div>
-    <div class="col-md-6">
-      <label for="parentName" class="form-label">Parent/Guardian Name</label>
-      <input type="text" class="form-control" id="parentName" placeholder="ENTER YOUR GUARDIAN NAME" required>
-    </div>
-    <div class="col-md-6">
-      <label for="email" class="form-label">Email</label>
-      <input type="email" class="form-control" id="email" placeholder="ENTER YOUR EMAIL ADDRESS" required>
-    </div>
-    <div class="col-md-6">
-      <label for="phone" class="form-label">Phone</label>
-      <input type="tel" class="form-control" id="phone" placeholder="ENTER YOUR CONTACT NUMBER" required>
-    </div>
-    <div class="col-12">
-      <label for="address" class="form-label">Address</label>
-      <textarea id="address" class="form-control" rows="3" placeholder="ENTER YOUR FULL ADDRESS" required></textarea>
-    </div>
-    <div class="col-12 text-center">
-      <button type="submit" class="btn btn-success px-4">Submit Application</button>
-    </div>
-  </form>
-</div>
+
 
 <!-- ✅ Stats -->
 <div class="stats text-center">
@@ -243,7 +161,6 @@
           <li><a href="about.jsp" class="text-decoration-none footer-textcolor">About</a></li>
           <li><a href="index.jsp#admission" class="text-decoration-none footer-textcolor">Admissions</a></li>
           <li><a href="contact.jsp" class="text-decoration-none footer-textcolor">Contact</a></li>
-          
         </ul>
       </div>
       <div class="col-md-4 text-center">
