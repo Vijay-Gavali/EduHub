@@ -12,20 +12,9 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-<<<<<<< HEAD
-@WebServlet("/TeacherStudentList") // URL mapping
-=======
-@WebServlet("/TeacherStudentList")
->>>>>>> 31de3f7953b7fc61ff0ad3bad5e788eb08966145
+@WebServlet("/TeacherStudentList") 
 public class TecherShowStudentList extends HttpServlet {
 
-	 
-	
-	
-
-	 /**
-	 * 
-	 */
 	private static final long serialVersionUID = 6481180130138303161L;
 
 	 @Override
