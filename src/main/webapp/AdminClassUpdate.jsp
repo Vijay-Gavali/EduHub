@@ -44,7 +44,7 @@
 
             <div class="form-actions">
                 <button type="submit" class="submit-btn">Update Class</button>
-                <a href="AdminClassController" class="cancel-btn">Cancel</a>
+                <a href="AdminViewClassesController" class="cancel-btn">Cancel</a>
             </div>
         </form>
 
@@ -53,7 +53,7 @@
         %>
         <div class="error-message">
             <p>No class data available to update.</p>
-            <a href="AdminClassController" class="back-btn">Back to Classes</a>
+            <a href="AdminViewClassesController" class="back-btn">Back to Classes</a>
         </div>
         <%
         }
