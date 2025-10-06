@@ -175,5 +175,14 @@
 		<servlet-name>AdminDeleteTeacherController</servlet-name>
 		<url-pattern>/AdminDeleteTeacherController</url-pattern>
 	</servlet-mapping>
+	
+	 <servlet>
+        <servlet-name>EnquiryController</servlet-name>
+        <servlet-class>com.controller.EnquiryController</servlet-class>
+    </servlet>
 
+    <servlet-mapping>
+        <servlet-name>EnquiryController</servlet-name>
+        <url-pattern>/EnquiryController</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -17,40 +17,43 @@
 <!-- ✅ Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark nav-bg fixed-top ms-1 me-1">
   <div class="container">
+    <!-- Brand Logo with Text -->
     <a class="navbar-brand d-flex align-items-center" href="Index.jsp">
       <img src="media/ed hub logo.png" alt="Edu Hub Logo" width="60" height="60" class="d-inline-block me-2">
-      Edu Hub
+      EduHub
     </a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
             data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
             aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto nav-textcolor">
         <li class="nav-item"><a class="nav-link" href="Index.jsp">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="About.jsp">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="StudentLife.jsp">Student Life</a></li>
+        <li class="nav-item"><a class="nav-link active" href="StudentLife.jsp">Student Life</a></li>
         <li class="nav-item"><a class="nav-link" href="Gallery.jsp">Gallery</a></li>
         <li class="nav-item"><a class="nav-link" href="Achievements.jsp">Achievements</a></li>
-        <li class="nav-item"><a class="nav-link active" href="Contact.jsp">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="Contact.jsp">Contact</a></li>
 
-        <% if (role != null) { %>
+        <% if (role == null) { %>
             <li class="nav-item">
-                <% if ("Admin".equalsIgnoreCase(role)) { %>
-                    <a class="nav-link btn btn-outline-warning ms-2 px-3 py-1 rounded" href="AdminDashboard.jsp">Dashboard</a>
-                <% } else if ("Teacher".equalsIgnoreCase(role)) { %>
-                    <a class="nav-link btn btn-outline-info ms-2 px-3 py-1 rounded" href="TeacherDashboard.jsp">Dashboard</a>
-                <% } else { %>
-                    <a class="nav-link btn btn-outline-success ms-2 px-3 py-1 rounded" href="UserDashboard.jsp">Dashboard</a>
-                <% } %>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link btn btn-danger ms-2 px-3 py-1 rounded" href="logout.jsp">Logout</a>
+                <a class="nav-link nav-btn" href="login.jsp">Login</a>
             </li>
         <% } else { %>
             <li class="nav-item">
-                <a class="nav-link btn btn-outline-light ms-2 px-3 py-1 rounded" href="login.jsp">Login</a>
+                <% if ("Admin".equalsIgnoreCase(role)) { %>
+                    <a class="nav-link nav-btn admin-btn" href="AdminDashboard.jsp">Dashboard</a>
+                <% } else if ("Teacher".equalsIgnoreCase(role)) { %>
+                    <a class="nav-link nav-btn teacher-btn" href="TeacherDashboard.jsp">Dashboard</a>
+                <% } else { %>
+                    <a class="nav-link nav-btn user-btn" href="UserDashboard.jsp">Dashboard</a>
+                <% } %>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav-btn logout-btn" href="logout.jsp">Logout</a>
             </li>
         <% } %>
       </ul>
@@ -81,25 +84,37 @@
 
       <!-- Contact Form -->
       <div class="col-md-7 form-color-h">
-        <h3>Send Us a Message</h3>
-        <form>
+        <h3>Admission Enquiry</h3>
+
+        <!-- ✅ Success/Error message -->
+        <%
+            String successMsg = request.getParameter("success");
+            String errorMsg = request.getParameter("error");
+            if (successMsg != null) {
+        %>
+            <div class="alert alert-success"><%= successMsg %></div>
+        <%
+            } else if (errorMsg != null) {
+        %>
+            <div class="alert alert-danger"><%= errorMsg %></div>
+        <%
+            }
+        %>
+
+        <form action="EnquiryController" method="post">
           <div class="mb-3">
-            <label class="form-label">Full Name</label>
-            <input type="text" class="form-control" placeholder="Enter your name">
+            <label class="form-label">Parent Name</label>
+            <input type="text" class="form-control" name="parent_name" required>
           </div>
           <div class="mb-3">
-            <label class="form-label">Email Address</label>
-            <input type="email" class="form-control" placeholder="Enter your email">
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Subject</label>
-            <input type="text" class="form-control" placeholder="Subject of your message">
+            <label class="form-label">Contact No</label>
+            <input type="text" class="form-control" name="contact_no" required>
           </div>
           <div class="mb-3">
             <label class="form-label">Message</label>
-            <textarea class="form-control" rows="5" placeholder="Type your message here..."></textarea>
+            <textarea class="form-control" rows="5" name="enquiry_message" required></textarea>
           </div>
-          <button type="submit" class="btn btn-success">Send Message</button>
+          <button type="submit" class="btn btn-success">Submit Enquiry</button>
         </form>
       </div>
     </div>
@@ -128,15 +143,15 @@
       <div class="col-md-4 text-center">
         <h5>Quick Links</h5>
         <ul class="list-unstyled">
-          <li><a href="about.jsp" class="text-decoration-none footer-textcolor">About</a></li>
-          <li><a href="index.jsp#admission" class="text-decoration-none footer-textcolor">Admissions</a></li>
-          <li><a href="contact.jsp" class="text-decoration-none footer-textcolor">Contact</a></li>
+          <li><a href="About.jsp" class="text-decoration-none footer-textcolor">About</a></li>
+          <li><a href="Index.jsp#admission" class="text-decoration-none footer-textcolor">Admissions</a></li>
+          <li><a href="Contact.jsp" class="text-decoration-none footer-textcolor">Contact</a></li>
         </ul>
       </div>
       <div class="col-md-4 text-center">
         <h5 class="ms-3">Reach us </h5>
         <p><i class="bi bi-envelope-fill me-2"></i> info@eduhub.com</p>
-        <p><i class="bi bi-telephone-fill me-2"></i> +91 12345 67890</p>
+        <p><i class="bi bi-telephone-fill me-2"></i> +91 98765 43210</p>
         <p><i class="bi bi-geo-alt-fill me-2"></i> Pune, Maharashtra, India</p>
       </div>
     </div>

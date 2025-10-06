@@ -1,87 +1,167 @@
 @charset "UTF-8";
 
 body {
-	background-color: white; /* soft light yellow background */
-	color: #333333; /* primary text color */
-	padding-top: 85px;
-	padding-left: 5px;
-	padding-right: 5px;
+    background-color: white; /* soft light yellow background */
+    color: #333333; /* primary text color */
+    padding-top: 85px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .page-header {
-	background: url('/media/about-banner.jpg') center/cover no-repeat;
-	height: 40vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: #ffffff;
-	text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    background: url('/media/about-banner.jpg') center/cover no-repeat;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
 
 .bg-color {
-	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-	color: #333333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333333;
 }
 
 /* index css start */
 .nav-bg {
-	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .navbar .nav-link {
-	color: white;
-	transition: color 0.3s; /* smooth hover effect */
+    color: white;
+    transition: color 0.3s; /* smooth hover effect */
 }
 
 .navbar .nav-link:hover {
-	color: white; /* hover color */
+    color: white; /* hover color */
 }
 
-.banner {
-	height: 70vh;
-	background: url('/media/school.jpg') center/cover no-repeat;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: white;
-	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+/* Navbar Buttons - align with links */
+.navbar .nav-link.nav-btn {
+    padding: 0.375rem 0.75rem;
+    margin-left: 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.95rem;
+    height: 38px; /* approximate navbar link height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white !important;
 }
+
+/* Role-specific button colors */
+.navbar .nav-link.nav-btn.admin-btn {
+    background-color: #ffc107; /* warning color */
+    color: #000 !important;
+}
+.navbar .nav-link.nav-btn.teacher-btn {
+    background-color: #0dcaf0; /* info color */
+    color: #000 !important;
+}
+.navbar .nav-link.nav-btn.user-btn {
+    background-color: #198754; /* success color */
+    color: #fff !important;
+}
+.navbar .nav-link.nav-btn.logout-btn {
+    background-color: #dc3545; /* danger color */
+    color: #fff !important;
+}
+
+/* Hover effect for navbar buttons */
+.navbar .nav-link.nav-btn:hover {
+    opacity: 0.85;
+    text-decoration: none;
+}
+
+/* Banner */
+.banner {
+    height: 70vh;
+    background: url('/media/school.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
 /* Stats */
 .stats {
-	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-	padding: 40px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 40px 0;
 }
 
 .stat-box {
-	padding: 20px;
-	background: #bed0dcd6;
-	color: #0d1b2a;
-	border-radius: 10px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background: #bed0dcd6;
+    color: #0d1b2a;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 footer {
-	background: #ffc60bf5;
-	color: rgb(29, 4, 248);
-	padding: 30px 0;
+    background: #ffc60bf5;
+    color: rgb(29, 4, 248);
+    padding: 30px 0;
 }
 
 .footer-textcolor {
-	color: rgb(29, 4, 248);
+    color: rgb(29, 4, 248);
 }
 
 .form-color {
-	background-color: #e3f2fd;
+    background-color: #e3f2fd;
 }
 
 .form-color-h {
-	background-color: #bed0dcd6;
+    background-color: #bed0dcd6;
 }
 
 .bg-index-color {
-	background-color: #2c2c2c7b;
+    background-color: #2c2c2c7b;
 }
 
 .heading-color {
-	color: #1b4332;
+    color: #1b4332;
+}
+
+/* Admission Process Steps */
+.process-step {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #e3f2fd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.process-step h4 {
+    font-weight: bold;
+}
+
+.process-step p {
+    margin-top: 10px;
+    font-size: 0.95rem;
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 10px;
+}
+
+/* Teaching Methodology */
+.object-fit-cover {
+    object-fit: cover;
+}
+
+/* Online Admission Form */
+form .form-control, form .form-select {
+    border-radius: 5px;
+}
+
+/* Buttons inside forms */
+form button.btn {
+    border-radius: 5px;
+    padding: 8px 20px;
+    font-weight: bold;
 }
