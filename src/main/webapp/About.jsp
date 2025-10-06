@@ -63,7 +63,7 @@
 </nav>
 
 <!-- ✅ Leadership Section -->
-<div class="container-fluid form-color " style="margin-top: 90px;">
+<div class="container-fluid form-color " style="margin-top: 0px;">
     <h2 class="text-center mb-2">Leadership</h2>
     <div class="row">
         <div class="col-md-4 d-flex justify-content-center">

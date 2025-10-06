@@ -1,4 +1,4 @@
-*-+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
     String role = (String) session.getAttribute("role");
 %>
@@ -62,49 +62,57 @@
 </nav>
 
     <!-- ✅ Page Header -->
-    <div class="page-header" style="background-image: url('media/school.jpg'); margin-top:90px;">
-      <h1>Achievements at Edu Hub</h1>
-    </div>
+    <div class="banner" style="background-image: url('media/school.jpg'); background-size: cover; background-position: center; height: 70vh; display: flex; align-items: center; justify-content: center; color: white; text-shadow: 2px 2px 5px rgba(0,0,0,0.7);">
+  <div class="text-center">
+    <h1>Achievements</h1>
+  </div>
+</div>
 
     <!-- ✅ Achievements Section -->
     <div class="form-color">
-      <div class="container pt-5">
-        <div class="text-center mb-5">
-          <h2>Our Students Shine</h2>
-          <p class="lead">Edu Hub celebrates academic, sports, and extracurricular achievements of our students.</p>
-        </div>
+  <div class="container pt-5">
+    <div class="text-center mb-5">
+      <h2>Our Students Shine</h2>
+      <p class="lead">Edu Hub celebrates academic, sports, and extracurricular achievements of our students.</p>
+    </div>
 
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="card life-card">
-              <img src="media/award1.jpg" class="card-img-top" alt="Academic Awards">
-              <div class="card-body form-color-h">
-                <h5 class="card-title">Academic Excellence</h5>
-                <p class="card-text">Students consistently excel in state and national level competitions, showcasing their academic brilliance.</p>
-              </div>
-            </div>
+    <div class="row g-4 align-items-stretch">
+      <!-- Academic Excellence -->
+      <div class="col-md-4">
+        <div class="card life-card h-100">
+          <img src="media/academicsachievement.jpg" class="card-img-top" alt="Academic Awards">
+          <div class="card-body form-color-h d-flex flex-column">
+            <h5 class="card-title">Academic Excellence</h5>
+            <p class="card-text">Students consistently excel in state and national level competitions, showcasing their academic brilliance.</p>
           </div>
-          <div class="col-md-4">
-            <div class="card life-card">
-              <img src="media/sports_award.jpg" class="card-img-top" alt="Sports Achievements">
-              <div class="card-body form-color-h">
-                <h5 class="card-title">Sports Achievements</h5>
-                <p class="card-text">Our athletes bring laurels in inter-school and state-level tournaments, promoting sportsmanship and discipline.</p>
-              </div>
-            </div>
+        </div>
+      </div>
+
+      <!-- Sports Achievements -->
+      <div class="col-md-4">
+        <div class="card life-card h-100">
+          <img src="media/sportachievement.jpg" class="card-img-top" alt="Sports Achievements">
+          <div class="card-body form-color-h d-flex flex-column">
+            <h5 class="card-title">Sports Achievements</h5>
+            <p class="card-text">Our athletes bring laurels in inter-school and state-level tournaments, promoting sportsmanship and discipline.</p>
           </div>
-          <div class="col-md-4">
-            <div class="card life-card">
-              <img src="media/cultural_award.jpg" class="card-img-top" alt="Cultural Awards">
-              <div class="card-body form-color-h">
-                <h5 class="card-title">Cultural Awards</h5>
-                <p class="card-text">Students excel in music, drama, and cultural events, reflecting creativity and talent.</p>
-              </div>
-            </div>
+        </div>
+      </div>
+
+      <!-- Cultural Awards -->
+      <div class="col-md-4">
+        <div class="card life-card h-100">
+          <img src="media/culturalachievement.jpg" class="card-img-top" alt="Cultural Awards">
+          <div class="card-body form-color-h d-flex flex-column">
+            <h5 class="card-title">Cultural Awards</h5>
+            <p class="card-text">Students excel in music, drama, and cultural events, reflecting creativity and talent.</p>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
 
     <!-- ✅ Footer -->
     <footer>
