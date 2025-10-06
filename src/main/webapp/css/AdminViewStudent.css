@@ -119,7 +119,6 @@ tr:last-child td[colspan="8"] {
 	font-style: italic;
 }
 
-/* Remove the inline border since we're adding our own */
 table[border="1"] {
 	border: none;
 }

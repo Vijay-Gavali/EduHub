@@ -36,7 +36,7 @@ public class AdminUpdateTeacherController extends HttpServlet {
 				user.put("user_id", rs.getInt("user_id"));
 				user.put("name", rs.getString("name"));
 				user.put("email", rs.getString("email"));
-				user.put("contact_no", rs.getString("contact_no"));
+				user.put("contact_no", rs.getString("phone"));
 				user.put("password", rs.getString("password"));
 				user.put("role", rs.getString("role"));
 				user.put("class_id", rs.getInt("class_id"));
@@ -67,7 +67,7 @@ public class AdminUpdateTeacherController extends HttpServlet {
 	    try {
 	        Connection con = DBConnection.getConnection();
 	        PreparedStatement ps = con.prepareStatement(
-	                "UPDATE users SET name = ?, email = ?, contact_no = ?, password = ?, role = ?, class_id = ? WHERE user_id = ?");
+	                "UPDATE users SET name = ?, email = ?, phone = ?, password = ?, role = ?, class_id = ? WHERE user_id = ?");
 
 	        ps.setString(1, name);
 	        ps.setString(2, email);

@@ -16,7 +16,6 @@
     <div class="update-class-container">
         <div class="form-header">
             <h2>Update Class</h2>
-            <p>Modify class information below</p>
         </div>
 
         <%

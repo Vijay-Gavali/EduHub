@@ -1,7 +1,5 @@
 @charset "UTF-8";
-@charset "UTF-8";
 
-/* Content Area */
 .content-area {
     margin-left: 250px;
     padding: 30px;
@@ -9,7 +7,6 @@
     min-height: 100vh;
 }
 
-/* Update Class Container */
 .update-class-container {
     max-width: 600px;
     margin: 0 auto;
@@ -19,10 +16,8 @@
     overflow: hidden;
 }
 
-/* Form Header */
 .form-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    color: Black;
     padding: 30px;
     text-align: center;
 }
@@ -34,11 +29,6 @@
     letter-spacing: 0.5px;
 }
 
-.form-header p {
-    margin: 0;
-    opacity: 0.9;
-    font-size: 16px;
-}
 
 /* Update Class Form */
 .update-class-form {
@@ -175,15 +165,6 @@
     display: inline-block;
 }
 
-.back-btn:hover {
-    background: linear-gradient(135deg, #2980b9 0%, #2573a7 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
-    color: white;
-    text-decoration: none;
-}
-
-/* Success/Error Messages from Request */
 .message-container {
     padding: 15px 20px;
     margin: 20px 40px;
@@ -274,19 +255,3 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Loading state for submit button */
-.submit-btn:disabled {
-    background: #bdc3c7;
-    cursor: not-allowed;
-    transform: none;
-}
-
-.submit-btn:disabled:hover {
-    box-shadow: none;
-    transform: none;
-}
-
-/* Focus states for accessibility */
-.form-group input:focus {
-    transform: translateY(-1px);
-}

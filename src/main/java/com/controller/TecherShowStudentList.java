@@ -12,7 +12,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/TeacherStudentList")  // ✅ This is the URL
+@WebServlet("/TeacherStudentList")
 public class TecherShowStudentList extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
