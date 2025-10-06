@@ -36,7 +36,7 @@ public class AdminUserController extends HttpServlet {
                 teacher.put("user_id", rs.getInt("user_id"));
                 teacher.put("name", rs.getString("name"));
                 teacher.put("email", rs.getString("email"));
-                teacher.put("contact_no", rs.getString("contact_no"));
+                teacher.put("contact_no", rs.getString("phone"));
                 teacher.put("role", rs.getString("role"));
                 teacher.put("age", rs.getInt("age"));
                 teacher.put("grade", rs.getString("grade"));

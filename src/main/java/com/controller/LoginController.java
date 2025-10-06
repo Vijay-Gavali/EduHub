@@ -138,7 +138,7 @@ public class LoginController extends HttpServlet {
             }
 
             // ---------- 3) Invalid credentials ----------
-            request.setAttribute("errorMessage", "Invalid phone/email/admission_no or password");
+            request.setAttribute("errorMessage", "Invalid credentials");
             request.getRequestDispatcher("login.jsp").forward(request, response);
 
         } catch (Exception e) {

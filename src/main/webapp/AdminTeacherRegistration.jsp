@@ -24,7 +24,7 @@
         <label>Password:</label>
         <input type="text" name="password" required /><br />
 
-        <label>Contact Number:</label>
+        <label>Phone Number:</label>
         <input type="text" name="contact_no" required /><br />
 
         <label>Assign Class To Teacher:</label>

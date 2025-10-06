@@ -166,5 +166,14 @@
 		<url-pattern>/ParentRegistration</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>AdminDeleteTeacherController</servlet-name>
+		<servlet-class>com.controller.AdminDeleteTeacherController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AdminDeleteTeacherController</servlet-name>
+		<url-pattern>/AdminDeleteTeacherController</url-pattern>
+	</servlet-mapping>
 
 </web-app>

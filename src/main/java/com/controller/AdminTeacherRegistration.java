@@ -38,7 +38,7 @@ public class AdminTeacherRegistration extends HttpServlet {
 
 			Connection connection = DBConnection.getConnection();
 
-			String insertQuery = "INSERT INTO users (name, email, password, contact_no, role, class_id) VALUES (?, ?, ?, ?, ?, ?)";
+			String insertQuery = "INSERT INTO users (name, email, password, phone, role, class_id) VALUES (?, ?, ?, ?, ?, ?)";
 			PreparedStatement ps = connection.prepareStatement(insertQuery);
 			ps.setString(1, name);
 			ps.setString(2, email);

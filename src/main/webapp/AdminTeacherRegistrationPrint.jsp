@@ -26,7 +26,7 @@
                 <h1>EduHub Academy</h1>
                 <p>Premium Education Management System</p>
                 <p>123 Education Street, Knowledge City, KC 12345</p>
-                <p>📞 +1 (555) 123-4567 | 📧 info@eduhub.edu</p>
+                <p> +91 (555) 123-4567 | info@eduhub.edu</p>
             </div>
             <div class="receipt-title">
                 <h2>Teacher Registration Confirmation</h2>
@@ -37,7 +37,7 @@
         <!-- Receipt Details -->
         <div class="receipt-body">
             <div class="details-section">
-                <h3>📋 Registration Information</h3>
+                <h3>Registration Information</h3>
                 <div class="details-grid">
 
                     <div class="detail-item">
@@ -52,7 +52,7 @@
             </div>
 
             <div class="details-section">
-                <h3>👨‍🏫 Teacher Details</h3>
+                <h3> Teacher Details</h3>
                 <div class="details-grid">
                     <div class="detail-item">
                         <span class="detail-label">Full Name:</span>
@@ -74,9 +74,9 @@
             </div>
 
             <div class="details-section">
-                <h3>🔐 Login Credentials</h3>
+                <h3> Login Credentials</h3>
                 <div class="credentials-warning">
-                    ⚠️ Please keep these credentials secure and confidential
+                     Please keep these credentials secure and confidential
                 </div>
                 <div class="details-grid">
                     <div class="detail-item">
@@ -99,7 +99,7 @@
             </div>
             
             <div class="important-notes">
-                <h4>📝 Important Notes:</h4>
+                <h4> Important Notes:</h4>
                 <ul>
                     <li>This document serves as official confirmation of teacher registration</li>
                     <li>Keep your login credentials secure and do not share with others</li>
@@ -109,7 +109,7 @@
             </div>
 
             <div class="footer-text">
-                <p>Thank you for joining EduHub Academy! 🎓</p>
+                <p>Thank you for joining EduHub Academy! </p>
                 <p>For assistance, contact: support@eduhub.edu | +1 (555) 123-HELP</p>
             </div>
         </div>

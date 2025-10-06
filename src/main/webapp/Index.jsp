@@ -45,12 +45,10 @@
         <li class="nav-item"><a class="nav-link" href="Contact.jsp">Contact</a></li>
 
         <% if (role == null) { %>
-            <!-- If NOT logged in -->
             <li class="nav-item">
                 <a class="nav-link btn btn-outline-light ms-2 px-3 py-1 rounded" href="login.jsp">Login</a>
             </li>
         <% } else { %>
-            <!-- If logged in -->
             <li class="nav-item">
                 <% if ("Admin".equalsIgnoreCase(role)) { %>
                     <a class="nav-link btn btn-outline-warning ms-2 px-3 py-1 rounded" href="AdminDashboard.jsp">Dashboard</a>
@@ -68,7 +66,6 @@
     </div>
   </div>
 </nav>
-
 
 <!-- ✅ Banner -->
 <div class="banner" style="background-image: url('media/school.jpg'); background-size: cover; background-position: center; height: 400px; display: flex; align-items: center; justify-content: center; color: white;">

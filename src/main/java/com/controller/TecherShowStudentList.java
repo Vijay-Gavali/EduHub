@@ -12,7 +12,11 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+<<<<<<< HEAD
 @WebServlet("/TeacherStudentList") // URL mapping
+=======
+@WebServlet("/TeacherStudentList")
+>>>>>>> 31de3f7953b7fc61ff0ad3bad5e788eb08966145
 public class TecherShowStudentList extends HttpServlet {
 
 	 

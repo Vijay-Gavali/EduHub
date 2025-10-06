@@ -48,7 +48,7 @@
                             <a href="AdminUpdateTeacherController?userId=<%=userId%>">
                                 Update
                             </a>
-                            <a href="AdminDeleteUserController?userId=<%=userId%>"
+                            <a href="AdminDeleteTeacherController?userId=<%=userId%>"
                                onclick="return confirm('Are you sure you want to delete this user?');">
                                 Delete
                             </a>
