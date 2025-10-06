@@ -231,6 +231,7 @@ p.no-classes {
     <li><a href="TeacherAssignedClasses">View Assigned Classes</a></li>
     <li><a href="TeacherStudentList">View Enrolled Students</a></li>
     <li><a href="TeacherAttendance">Mark & View Attendance</a></li> <!-- matches servlet URL -->
+        <li><a href="TeacherViewAttendance">View Attendance Report</a></li>
 </ul>
 
     </div>
