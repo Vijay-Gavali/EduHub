@@ -41,20 +41,20 @@
 
         <% if (role == null) { %>
             <li class="nav-item">
-                <a class="nav-link nav-btn" href="login.jsp">Login</a>
+                <a class="nav-link" href="login.jsp">Login</a>
             </li>
         <% } else { %>
             <li class="nav-item">
                 <% if ("Admin".equalsIgnoreCase(role)) { %>
-                    <a class="nav-link nav-btn admin-btn" href="AdminDashboard.jsp">Dashboard</a>
+                    <a class="nav-link" href="AdminDashboard.jsp">Dashboard</a>
                 <% } else if ("Teacher".equalsIgnoreCase(role)) { %>
-                    <a class="nav-link nav-btn teacher-btn" href="TeacherDashboard.jsp">Dashboard</a>
+                    <a class="nav-link" href="TeacherDashboard.jsp">Dashboard</a>
                 <% } else { %>
-                    <a class="nav-link nav-btn user-btn" href="UserDashboard.jsp">Dashboard</a>
+                    <a class="nav-link" href="UserDashboard.jsp">Dashboard</a>
                 <% } %>
             </li>
             <li class="nav-item">
-                <a class="nav-link nav-btn logout-btn" href="logout.jsp">Logout</a>
+                <a class="nav-link" href="logout.jsp">Logout</a>
             </li>
         <% } %>
       </ul>

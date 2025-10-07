@@ -42,20 +42,20 @@
 
         <% if (role == null) { %>
             <li class="nav-item">
-                <a class="nav-link nav-btn" href="login.jsp">Login</a>
+                <a class="nav-link" href="login.jsp">Login</a>
             </li>
         <% } else { %>
             <li class="nav-item">
                 <% if ("Admin".equalsIgnoreCase(role)) { %>
-                    <a class="nav-link nav-btn admin-btn" href="AdminDashboard.jsp">Dashboard</a>
+                    <a class="nav-link" href="AdminDashboard.jsp">Dashboard</a>
                 <% } else if ("Teacher".equalsIgnoreCase(role)) { %>
-                    <a class="nav-link nav-btn teacher-btn" href="TeacherDashboard.jsp">Dashboard</a>
+                    <a class="nav-link" href="TeacherDashboard.jsp">Dashboard</a>
                 <% } else { %>
-                    <a class="nav-link nav-btn user-btn" href="UserDashboard.jsp">Dashboard</a>
+                    <a class="nav-link" href="UserDashboard.jsp">Dashboard</a>
                 <% } %>
             </li>
             <li class="nav-item">
-                <a class="nav-link nav-btn logout-btn" href="logout.jsp">Logout</a>
+                <a class="nav-link" href="logout.jsp">Logout</a>
             </li>
         <% } %>
       </ul>
@@ -64,9 +64,12 @@
 </nav>
 
     <!-- ✅ Page Header -->
-    <div class="page-header form-color-h" style="background-image: url('media/school.jpg');">
-      <h1 class="text-center py-5 text-white">Student Life at Edu Hub</h1>
-    </div>
+    <div class="banner" style="background-image: url('media/school.jpg'); background-size: cover; background-position: center; height: 70vh; display: flex; align-items: center; justify-content: center; color: white; text-shadow: 2px 2px 5px rgba(0,0,0,0.7);">
+  <div class="text-center">
+    <h1>Student Life at EduHub</h1>
+  </div>
+</div>
+
 
     <!-- ✅ Activities Section -->
     <div class="form-color py-5">
