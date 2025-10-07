@@ -42,27 +42,26 @@
 
         <% if (role == null) { %>
             <li class="nav-item">
-                <a class="nav-link nav-btn" href="login.jsp">Login</a>
+                <a class="nav-link" href="login.jsp">Login</a>
             </li>
         <% } else { %>
             <li class="nav-item">
                 <% if ("Admin".equalsIgnoreCase(role)) { %>
-                    <a class="nav-link nav-btn admin-btn" href="AdminDashboard.jsp">Dashboard</a>
+                    <a class="nav-link" href="AdminDashboard.jsp">Dashboard</a>
                 <% } else if ("Teacher".equalsIgnoreCase(role)) { %>
-                    <a class="nav-link nav-btn teacher-btn" href="TeacherDashboard.jsp">Dashboard</a>
+                    <a class="nav-link" href="TeacherDashboard.jsp">Dashboard</a>
                 <% } else { %>
-                    <a class="nav-link nav-btn user-btn" href="UserDashboard.jsp">Dashboard</a>
+                    <a class="nav-link" href="UserDashboard.jsp">Dashboard</a>
                 <% } %>
             </li>
             <li class="nav-item">
-                <a class="nav-link nav-btn logout-btn" href="logout.jsp">Logout</a>
+                <a class="nav-link" href="logout.jsp">Logout</a>
             </li>
         <% } %>
       </ul>
     </div>
   </div>
 </nav>
-
 <!-- ✅ Banner -->
 <div class="banner" style="background-image: url('media/school.jpg'); background-size: cover; background-position: center; height: 70vh; display: flex; align-items: center; justify-content: center; color: white; text-shadow: 2px 2px 5px rgba(0,0,0,0.7);">
   <div class="text-center">
@@ -158,9 +157,9 @@
       <div class="col-md-4 text-center">
         <h5>Quick Links</h5>
         <ul class="list-unstyled">
-          <li><a href="about.jsp" class="text-decoration-none footer-textcolor">About</a></li>
-          <li><a href="index.jsp#admission" class="text-decoration-none footer-textcolor">Admissions</a></li>
-          <li><a href="contact.jsp" class="text-decoration-none footer-textcolor">Contact</a></li>
+          <li><a href="About.jsp" class="text-decoration-none footer-textcolor">About</a></li>
+          <li><a href="Index.jsp" class="text-decoration-none footer-textcolor">Admissions</a></li>
+          <li><a href="Contact.jsp" class="text-decoration-none footer-textcolor">Contact</a></li>
         </ul>
       </div>
       <div class="col-md-4 text-center">
