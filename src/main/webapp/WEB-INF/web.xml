@@ -176,6 +176,16 @@
 		<url-pattern>/AdminDeleteTeacherController</url-pattern>
 	</servlet-mapping>
 	
+		<servlet>
+		<servlet-name>AdminUploadStudentExcelController</servlet-name>
+		<servlet-class>com.controller.AdminUploadStudentExcelController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AdminUploadStudentExcelController</servlet-name>
+		<url-pattern>/AdminUploadStudentExcelController</url-pattern>
+	</servlet-mapping>
+	
 	 <servlet>
         <servlet-name>EnquiryController</servlet-name>
         <servlet-class>com.controller.EnquiryController</servlet-class>

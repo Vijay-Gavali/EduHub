@@ -7,8 +7,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.Iterator;
 
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 import com.dbconnection.DBConnection;
-import com.mysql.cj.result.Row;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
@@ -68,6 +71,8 @@ public class AdminUploadStudentExcelController extends HttpServlet {
             out.println("<h3>✅ Excel data imported successfully!</h3>");
         } catch (Exception e) {
             e.printStackTrace(out);
+            System.out.println(e);
+
         }
     }
 

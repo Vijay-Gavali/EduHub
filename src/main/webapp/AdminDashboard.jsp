@@ -29,7 +29,7 @@
 			<li><a href="AdminViewAttendance.jsp">View Attendance</a></li>
 			<li><a href="AdminManageFees.jsp">Manage Fees</a></li>
 			<li><a href="#">View Enquiries</a></li>
-			<li><a href="#">Upload Student Excel</a></li>
+			<li><a href="AdminUploadStudentExcel.jsp">Upload Student Excel</a></li>
 		</ul>
 	</div>
 
