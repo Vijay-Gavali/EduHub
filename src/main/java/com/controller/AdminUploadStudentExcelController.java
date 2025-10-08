@@ -70,11 +70,16 @@ public class AdminUploadStudentExcelController extends HttpServlet {
 			con.close();
 
 			out.println("<script>alert('Student record uploaded successfully!');</script>");
-			} catch (Exception e) {
-			e.printStackTrace(out);
+
+		} catch (Exception e) {
+			out.println("<script>alert('Duplicate entry for data!');</script>");
+			response.sendRedirect("AdminUploadStudentExcel.jsp");
 			System.out.println(e);
 
 		}
+		
+		response.sendRedirect("AdminUploadStudentExcel.jsp");
+
 	}
 
 	private String getCellValue(Cell cell) {

@@ -8,16 +8,24 @@
 <style><%@include file="css/AdminDashboard.css"%></style></head>
 <body>
 	<nav class="navbar">
-		<div class="logo-container">
-			<div class="logo">
-				<img src="media/ed hub logo.png" alt="EduHub Logo">
-			</div>
-			<span class="brand-name">EduHub Admin</span>
-		</div>
-		<div class="logout-btn">
-			<a href="logout.jsp">Logout</a>
-		</div>
-	</nav>
+    <div class="logo-container">
+        <div class="logo">
+            <img src="media/ed hub logo.png" alt="EduHub Logo">
+        </div>
+        <span class="brand-name">EduHub Admin</span>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="Index.jsp">Home</a></li>
+        <li><a href="About.jsp">About</a></li>
+        <li><a href="StudentLife.jsp">Student Life</a></li>
+        <li><a href="Gallery.jsp">Gallery</a></li>
+        <li><a href="Achievements.jsp">Achievements</a></li>
+        <li><a href="Contact.jsp">Contact</a></li>
+        <li><a href="AdminDashboard.jsp">Dashboard</a></li>
+        <li><a href="logout.jsp">Logout</a></li>
+    </ul>
+</nav>
 
 	<div class="dashboard-menu">
 		<ul>
