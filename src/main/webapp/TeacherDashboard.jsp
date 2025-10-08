@@ -22,7 +22,6 @@
 	<div class="dashboard-menu">
 		<ul>
 			
-	<li>Teacher</li>		
     <li><a href="TeacherAssignedClasses">View Assigned Classes</a></li>
     <li><a href="TeacherStudentList">View Enrolled Students</a></li>
     <li><a href="TeacherAttendance">Mark & View Attendance</a></li> <!-- matches servlet URL -->

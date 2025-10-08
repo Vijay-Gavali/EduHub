@@ -155,7 +155,7 @@
                 
                 <div class="form-group">
                     <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" 
+                    <input type="text" id="password" name="password" 
                            value="<%= student.get("password") != null ? student.get("password") : "" %>" required>
                 </div>
             </div>
